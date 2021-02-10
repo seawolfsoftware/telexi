@@ -7,67 +7,72 @@ import time
 import machine
 
 
-def press():
-
-    print('Button PRESSED at:' )
-    time.sleep(5)
-
-
-led = machine.Pin(23, machine.Pin.OUT)
-button_state = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_UP)
-
-while True:
-    #  When a button is pressed, the corresponding pin is
-    #  connected to the ground and its value goes to 0
-    if button_state.value() == 0:
-        pass
-
-    elif button_state.value() == 1:
-        press()
-        led.on()
-        time.sleep(1)
-
-# The MIT License (MIT)
-# Copyright (c) 2020 Mike Teachman
-# https://opensource.org/licenses/MIT
-
-# Purpose:
-# - read 16-bit audio samples from a stereo formatted WAV file
-#   stored in the internal MicroPython filesystem
-# - write audio samples to an I2S amplifier or DAC module
+# def press():
 #
-# Sample WAV file in wav_files folder:
-#   "side-to-side-8k-16bits-stereo.wav"
+#     print('Button PRESSED at:' )
+#     time.sleep(5)
 #
-# Hardware tested:
-# - PCM5102 stereo DAC module
 #
-# The WAV file will play continuously until a keyboard interrupt is detected or
-# the ESP32 is reset
-
-# from machine import I2S
-# from machine import Pin
+# led = machine.Pin(23, machine.Pin.OUT)
+# button_state = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_UP)
+#
+# while True:
+#     #  When a button is pressed, the corresponding pin is
+#     #  connected to the ground and its value goes to 0
+#     if button_state.value() == 0:
+#         pass
+#
+#     elif button_state.value() == 1:
+#         press()
+#         led.on()
+#         time.sleep(1)
+#
+# # The MIT License (MIT)
+# # Copyright (c) 2020 Mike Teachman
+# # https://opensource.org/licenses/MIT
+#
+# # Purpose:
+# # - read 16-bit audio samples from a stereo formatted WAV file
+# #   stored in the internal MicroPython filesystem
+# # - write audio samples to an I2S amplifier or DAC module
+# #
+# # Sample WAV file in wav_files folder:
+# #   "side-to-side-8k-16bits-stereo.wav"
+# #
+# # Hardware tested:
+# # - PCM5102 stereo DAC module
+# #
+# # The WAV file will play continuously until a keyboard interrupt is detected or
+# # the ESP32 is reset
+#
+# # from machine import I2S
+# # from machine import Pin
 
 # ======= USER CONFIGURATION =======
 WAV_FILE = 'side-to-side-8k-16bits-stereo.wav'
 SAMPLE_RATE_IN_HZ = 8000
 # ======= USER CONFIGURATION =======
 
-bck_pin = Pin(33)
-ws_pin = Pin(25)
-sdout_pin = Pin(32)
+
+bck_pin = machine.Pin(26)
+ws_pin = machine.Pin(25)
+sdout_pin = machine.Pin(22)
+
 
 # channelformat setting:
 #     stereo WAV: channelformat=I2S.RIGHT_LEFT
-audio_out = I2S(
-    I2S.NUM1,
-    bck=bck_pin, ws=ws_pin, sdout=sdout_pin,
-    standard=I2S.PHILIPS,
-    mode=I2S.MASTER_TX,
-    dataformat=I2S.B16,
-    channelformat=I2S.RIGHT_LEFT,
+audio_out = machine.I2S(
+    machine.I2S.NUM1,
+    bck=bck_pin,
+    ws=ws_pin,
+    sdout=sdout_pin,
+    standard=machine.I2S.PHILIPS,
+    mode=machine.I2S.MASTER_TX,
+    dataformat=machine.I2S.B16,
+    channelformat=machine.I2S.RIGHT_LEFT,
     samplerate=SAMPLE_RATE_IN_HZ,
-    dmacount=10, dmalen=512)
+    dmacount=10,
+    dmalen=512)
 
 wav = open(WAV_FILE, 'rb')
 
