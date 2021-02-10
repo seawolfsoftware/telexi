@@ -26,32 +26,21 @@ import machine
 #         press()
 #         led.on()
 #         time.sleep(1)
-#
-# # The MIT License (MIT)
-# # Copyright (c) 2020 Mike Teachman
-# # https://opensource.org/licenses/MIT
-#
-# # Purpose:
+
 # # - read 16-bit audio samples from a stereo formatted WAV file
 # #   stored in the internal MicroPython filesystem
 # # - write audio samples to an I2S amplifier or DAC module
-# #
-# # Sample WAV file in wav_files folder:
-# #   "side-to-side-8k-16bits-stereo.wav"
 # #
 # # Hardware tested:
 # # - PCM5102 stereo DAC module
 # #
 # # The WAV file will play continuously until a keyboard interrupt is detected or
 # # the ESP32 is reset
-#
-# # from machine import I2S
-# # from machine import Pin
 
-# ======= USER CONFIGURATION =======
-WAV_FILE = 'side-to-side-8k-16bits-stereo.wav'
+
+WAV_FILE = 'hellothere.wav'
 SAMPLE_RATE_IN_HZ = 8000
-# ======= USER CONFIGURATION =======
+
 
 
 bck_pin = machine.Pin(26)
