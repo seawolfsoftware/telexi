@@ -14,4 +14,8 @@ esptool.py --chip esp32 --port /dev/cu.usbserial-0001 erase_flash
 esptool.py --chip esp32 -p /dev/cu.usbserial-0001 write_flash --flash_mode=dio 0x1000 esp32-idf3-20200902-v1.13.bin
 
 # enter the REPL prompt
-picocom /dev/cu.usbserial-0001 -b115200
+#picocom /dev/cu.usbserial-0001 -b115200
+
+# enter rshell
+rshell --buffer-size=30 -p /dev/cu.usbserial-0001 -a -e vim
+
