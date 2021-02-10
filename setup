@@ -5,6 +5,7 @@
 ls /dev/cu.*
 
 # cd to local Python executables where esptool.py is
+# shellcheck disable=SC2164
 cd /library/frameworks/python.framework/versions/3.8/bin
 
 # erase flash
