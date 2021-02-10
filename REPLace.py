@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 
-
 # Uses a serial connection to REPL to copy dirs/files to a MicroPython instance.
 # This is slow. It's just auto-writing Python commands to the REPL connection.
 
@@ -10,15 +9,10 @@
 # Add your username to dialout: sudo adduser username dialout
 # You have to log out and back in or reboot after changing dialout.
 
-# Set port
-
 port = '/dev/cu.usbserial-0001'
 
-# Given a local folder using the variable file_system_dir,
-# this overwrites the folder content to the flash of the MicroPython instance.
-# The file_system_dir folder becomes the root directory on the chip.
-# If file_system_dir is None, it will use the current working directory.
-
+# file_system_dir folder becomes the root directory on microprocessor
+# If None, root directory will be current working directory
 file_system_dir = None
 
 # Any directory or file whose basename matches an item in "excludes"
@@ -27,8 +21,9 @@ file_system_dir = None
 
 excludes = ['REPLace.py',
             'archive',
-            'video',
-            'thumbs',
+            'bin',
+            '.git',
+            'reference',
             ]
 
 # FOR FILES: This is the opposite of excludes. If you list basenames here, then only
@@ -38,7 +33,7 @@ excludes = ['REPLace.py',
 includes = []
 includes.append('boot.py')
 includes.append('main.py')
-includes.append('blinker.py')
+includes.append('button.py')
 
 # The following variable reduces upload size.
 # If True, this removes blank lines, comments, and right-side whitespace.
@@ -61,7 +56,9 @@ smash_only = False
 smash_keep = False
 
 # smash level
-# 1 = blank lines, 2 = full comment lines, 3 = end comments
+# 1 = blank lines,
+# 2 = full comment lines,
+# 3 = end comments
 # if 3, and text # is in line, you must put a # at the end of the line
 smash_level = 2
 
@@ -79,6 +76,7 @@ import time
 import re
 import serial
 import shutil
+
 
 def run():
 
@@ -132,9 +130,9 @@ class uploader:
                                             baudrate=self.baudrate,
                                             timeout=self.timeout)
             self.connection.flush()
-            self.connection.write([3,3])  # clear = ctrl-c
+            self.connection.write([3, 3])  # clear = ctrl-c
             # self.connection.write([4]) # soft reboot = ctrl-d
-            self.recv(done=True) # full read
+            self.recv(done=True)  # full read
 
             # imports
             self.send('import os')
