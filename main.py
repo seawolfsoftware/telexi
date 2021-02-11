@@ -1,29 +1,86 @@
+
 print('Running: main.py')
 
-import button
-
-button.press()
-
-from machine import Pin
+import sys
 from time import sleep
+from MicroWebSrv2.MicroWebSrv2 import WebRoute, GET
+from MicroWebSrv2.MicroWebSrv2.libs.XAsyncSockets import XAsyncSocketsPool
+from MicroWebSrv2.MicroWebSrv2.microWebSrv2 import MicroWebSrv2
 
-print('Entering main program...~~~~~')
+xasPool = XAsyncSocketsPool()
+srvHttp = MicroWebSrv2()
 
-led = Pin(23, Pin.OUT)
-button = Pin(22, Pin.IN)
+# TODO make switch to SSL
+# srvHttps = MicroWebSrv2()
+# srvHttps.EnableSSL( certFile = 'SSL-Cert/openhc2.crt',
+#                     keyFile  = 'SSL-Cert/openhc2.key' )
+# srvHttps.StartInPool(xasPool)
 
-while True:
+srvHttp.StartInPool(xasPool)
 
-    button_state = button.value()
-    if button_state == True:
-        led.value(1)
-    else:
-        led.value(0)
-
-
-
-from machine import Pin
-led = Pin(12, Pin.OUT)  # IO16
-led2 = Pin(5, Pin.OUT)
+xasPool.AsyncWaitEvents(threadsCount=1)
 
 
+@WebRoute(GET, '/local')
+def RequestTest(microWebSrv2, request):
+    request.Response.ReturnOkJSON({
+        'Method': request.Method,
+        'Authorization': request.Authorization,
+        'isSSL': request.IsSSL,
+        'Client Address': request.UserAddress,
+        'Host': request.Host,
+        'Origin': request.Origin,
+        'Path': request.Path,
+        'Accept': request.Accept,
+        'UserAgent': request.UserAgent,
+        'HttpVer': request.HttpVer,
+        'QueryString': request.QueryString,
+        'QueryParams': request.QueryParams,
+
+    })
+
+
+try:
+    while True:
+        sleep(1)
+
+except KeyboardInterrupt:
+    srvHttp.Stop()
+    # srvHttps.Stop()
+    xasPool.StopWaitEvents()
+
+
+
+
+
+
+
+########
+# Ctrl-c to end
+
+print('LOAD: button.py')
+
+import sys
+import time
+import machine
+
+
+# def press():
+#
+#     print('Button PRESSED at:' )
+#     time.sleep(5)
+#
+#
+# led = machine.Pin(23, machine.Pin.OUT)
+# button_state = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_UP)
+#
+# while True:
+#     #  When a button is pressed, the corresponding pin is
+#     #  connected to the ground and its value goes to 0
+#     if button_state.value() == 0:
+#         pass
+#
+#     elif button_state.value() == 1:
+#         press()
+#         led.on()
+#         time.sleep(1)
