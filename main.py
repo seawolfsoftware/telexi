@@ -9,11 +9,13 @@ from MicroWebSrv2.MicroWebSrv2.microWebSrv2 import MicroWebSrv2
 
 xasPool = XAsyncSocketsPool()
 srvHttp = MicroWebSrv2()
+# srvHttp.BindAddress = ('192.168.0.1', 12345)
 
 # TODO make switch to SSL
 # srvHttps = MicroWebSrv2()
-# srvHttps.EnableSSL( certFile = 'SSL-Cert/openhc2.crt',
-#                     keyFile  = 'SSL-Cert/openhc2.key' )
+# /Users/chaz/miniconda3/ssl
+# srvHttps.EnableSSL(certFile='cert/host.cert',
+#                    keyFile='cert/host.key')
 # srvHttps.StartInPool(xasPool)
 
 srvHttp.StartInPool(xasPool)
@@ -48,10 +50,6 @@ except KeyboardInterrupt:
     srvHttp.Stop()
     # srvHttps.Stop()
     xasPool.StopWaitEvents()
-
-
-
-
 
 
 
