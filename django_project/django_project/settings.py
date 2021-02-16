@@ -17,17 +17,34 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
+if 'DJANGO_DEBUG_FALSE' in os.environ:
+    DEBUG = False
+    SECRET_KEY = os.environ['SECRET_KEY']
+    ALLOWED_HOSTS = ['telexi.seawolfsoftware.io']
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%6f0xd%c1h9@5vf5)%@-!3vph7enw$f&&@c#yq3fyv!!gjn^e_'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'telexi',
+            'USER': 'chaz',
+            'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD'),
+            'HOST': 'private-django-db-do-user-8596411-0.b.db.ondigitalocean.com',
+            'PORT': 25060
+        }
+    }
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+else:
+    DEBUG = True
+    SECRET_KEY = 'seawolf'
+    ALLOWED_HOSTS = ['*']
 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Application definition
 
@@ -81,16 +98,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -128,6 +135,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
