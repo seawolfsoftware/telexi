@@ -1,18 +1,21 @@
 import json
-import time
 import network
-import urequests
-import socket
 import os
+import socket
+import time
+import urequests
+
 
 # Read config file from file system into json object
-# with open('config.json') as f:
-#     config = json.load(f)
+with open('config.json') as f:
+    config = json.load(f)
 
 
 # Check config.json has updated credentials
-# if config['ssid'] == '':
-#     assert False, 'config.json ssid value is empty'
+if config['ssid'] == '' or None:
+    assert False, 'config.json ssid value is empty'
+elif config['ssid_password'] == '' or None:
+    assert False, 'config.json ssid password value is empty'
 
 
 def connect_to_wifi():
@@ -20,7 +23,7 @@ def connect_to_wifi():
     wlan.active(True)
     if not wlan.isconnected():
         print('Connecting to Wifi ...')
-        wlan.connect('Chaz&Annie', 'Watermelon23')
+        wlan.connect(config['ssid'], config['ssid_password'])
         # request = urequests.get('https://telexi.seawolfsoftware.io/api/v1/')
         # print(request)
         while not wlan.isconnected():
@@ -30,14 +33,12 @@ def connect_to_wifi():
 
 def connect_to_socket():
 
-
-    url = 'https://telexi.seawolfsoftware.io/api/v1/'
+    url = config['server_url']
     _, _, host, path = url.split('/', 3)
-
 
     while True:
         s = socket.socket()
-        addr = socket.getaddrinfo('157.230.93.255', 80)[0][-1]
+        addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
         s.connect(addr)
 
         s.send(bytes('GET /%s HTTP/1.0\r\nHost: %s\r\n\r\n' % (path, host), 'utf8'))
