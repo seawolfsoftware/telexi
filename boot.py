@@ -41,11 +41,19 @@ def connect_to_socket():
         addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
         s.connect(addr)
 
-        s.send(bytes('GET /%s HTTP/1.0\r\nHost: %s\r\n\r\n' % (path, host), 'utf8'))
+        s.send(b"GET /%s HTTP/1.1\r\n Host: %s\r\n" % (bytes(path, "utf-8"), bytes(host, "utf-8")))
 
-        data = s.recv(100)
+        # s.send(bytes('GET %s '
+        #              'HTTP/1.1\r\n'
+        #              'Host: %s\r\n\r\n' %
+        #              ('api/v1/', 'telexi.seawolfsoftware.io'), 'utf-8'))
 
-        time.sleep(3)
+        # s.send(bytes('GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n'), 'utf-8')
+        # GET / HTTP / 1.1\r\nHost: www.google.com\r\n\r\n
+
+        data = s.recv(1024)
+        time.sleep(1)
+
         if data:
             print(str(data, 'utf8'), end='')
         else:
