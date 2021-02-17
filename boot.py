@@ -91,7 +91,7 @@ def connect_to_socket():
 
     while True:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        addr = socket.getaddrinfo(config['server_ip'], 443)[0][-1]
+        addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
         print(addr)
         s.connect(addr)
 
