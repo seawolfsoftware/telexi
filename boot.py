@@ -84,7 +84,7 @@ def web_page():
     return html_page
 
 
-def connect_to_socket():
+def connect_to_upstream_socket():
 
     url = config['server_url']
     _, _, host, path = url.split('/', 3)
@@ -117,5 +117,38 @@ def connect_to_socket():
         s.close()
 
 
+def post_to_upstream_socket():
+
+    url = config['server_url']
+    _, _, host, path = url.split('/', 3)
+
+    while True:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
+        print(addr)
+        s.connect(addr)
+
+        method = bytes('POST /', 'utf-8')
+        path = bytes('api/v1/ ', 'utf-8')
+        protocol = bytes('HTTP/1.1\r\n', 'utf-8')
+
+        host = bytes("Host: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
+
+        request = b"".join([method, path, protocol, host])
+
+        # Send request to endpoint
+        s.send(request)
+
+        # Read response into buffer
+        data = s.recv(1024)
+        time.sleep(1)
+
+        if data:
+            print(str(data, 'utf8'), end='')
+        else:
+            break
+        s.close()
+
+
 connect_to_wifi()
-connect_to_socket()
+post_to_upstream_socket()
