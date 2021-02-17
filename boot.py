@@ -19,6 +19,7 @@ elif config['ssid_password'] == '' or None:
 
 
 def connect_to_wifi():
+
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     if not wlan.isconnected():
@@ -61,5 +62,55 @@ def connect_to_socket():
         s.close()
 
 
+def web_page():
+    html_page = """  
+            <html>  
+            <head>  
+              <meta content="width=device-width, initial-scale=1" name="viewport"></meta>  
+            </head>  
+            <body>  
+                <h1>telexi</h1>
+            </body>  
+            </html>"""
+    return html_page
+
+
 connect_to_wifi()
-connect_to_socket()
+
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(('', 80))
+s.listen(5)
+
+while True:
+    # Socket accept()
+    conn, addr = s.accept()
+    print("Got connection from %s" % str(addr))
+
+    # Socket receive()
+    request = conn.recv(1024)
+    print("")
+    print("")
+    print("Content %s" % str(request))
+
+    # Socket send()
+    request = str(request)
+    # led_on = request.find('/?LED=1')
+    # led_off = request.find('/?LED=0')
+    # if led_on == 6:
+    #     print('LED ON')
+    #     print(str(led_on))
+    #     led.value(1)
+    # elif led_off == 6:
+    #     print('LED OFF')
+    #     print(str(led_off))
+    #     led.value(0)
+    response = web_page()
+
+    conn.send(bytes('HTTP/1.1 200 OK\n', 'utf-8'))
+    conn.send(bytes('Content-Type: text/html\n', 'utf-8'))
+    conn.send(bytes('Connection: close\n\n', 'utf-8'))
+    conn.sendall(response)
+
+    # Socket close()
+    conn.close()
