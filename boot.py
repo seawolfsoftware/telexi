@@ -4,6 +4,7 @@ import os
 import socket
 import time
 import urequests
+import machine
 
 
 # Read config file from file system into json object
@@ -167,4 +168,13 @@ def post_to_upstream_socket():
 
 
 connect_to_wifi()
-post_to_upstream_socket()
+
+tp = machine.TouchPad(machine.Pin(14))
+
+while True:
+    print(tp.read())
+    time.sleep(2)
+
+
+
+# post_to_upstream_socket()
