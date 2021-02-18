@@ -128,20 +128,36 @@ def post_to_upstream_socket():
         print(addr)
         s.connect(addr)
 
+        body_dict = '{"device_id":"gdd", "is_button_on": "true"}\r\n'
+        raw_content_length = 'Content-Length: ' + str(len(body_dict)) + '\r\n\r\n'
         method = bytes('POST /', 'utf-8')
         path = bytes('api/v1/ ', 'utf-8')
         protocol = bytes('HTTP/1.1\r\n', 'utf-8')
+        host = bytes("Host: telexi.seawolfsoftware.io\r\n", 'utf-8')
+        content_type = bytes('Content-Type: application/json\r\n', 'utf-8')
+        content_length = bytes(raw_content_length, 'utf-8')
 
-        host = bytes("Host: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
+        # body_dict = '{"device_id": "aye", "is_button_on": "true"}\r\n'
+        # dumped_json_string = json.dumps(body_dict)
 
-        request = b"".join([method, path, protocol, host])
+        # convert json string to binary
+        binary_body = bytes(body_dict, 'utf-8')
+
+        # Build binary request
+        request = b"".join([method,
+                            path,
+                            protocol,
+                            host,
+                            content_type,
+                            content_length,
+                            binary_body])
 
         # Send request to endpoint
         s.send(request)
 
         # Read response into buffer
         data = s.recv(1024)
-        time.sleep(1)
+        time.sleep(3)
 
         if data:
             print(str(data, 'utf8'), end='')
