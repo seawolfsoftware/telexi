@@ -3,8 +3,9 @@ import network
 import os
 import socket
 import time
-import urequests
-import machine
+from Interact import *
+from machine import Pin, TouchPad
+from time import sleep_ms
 
 
 # Read config file from file system into json object
@@ -169,12 +170,16 @@ def post_to_upstream_socket():
 
 connect_to_wifi()
 
-tp = machine.TouchPad(machine.Pin(14))
-
-while True:
-    print(tp.read())
-    time.sleep(2)
-
-
 
 # post_to_upstream_socket()
+
+
+my_touch = Interact(TouchPad(Pin(14)),
+                    touch_sensitivity=250,
+                    callback=lambda event, clicks: print(event, clicks))
+
+
+# Listen for touch events every 10ms
+while True:
+    my_touch.update()
+    sleep_ms(10)
