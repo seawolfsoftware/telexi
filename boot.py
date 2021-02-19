@@ -1,12 +1,9 @@
 import json
 import network
-import os
 import socket
 import time
 from Interact import *
 from machine import Pin, TouchPad
-from time import sleep_ms
-
 
 # Read config file from file system into json object
 with open('config.json') as f:
@@ -27,8 +24,7 @@ def connect_to_wifi():
     if not wlan.isconnected():
         print('Connecting to Wifi ...')
         wlan.connect(config['ssid'], config['ssid_password'])
-        # request = urequests.get('https://telexi.seawolfsoftware.io/api/v1/')
-        # print(request)
+
         while not wlan.isconnected():
             pass
     print('Network Configuration:', wlan.ifconfig())
@@ -94,32 +90,36 @@ def connect_to_upstream_socket():
     while True:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
-        print(addr)
+        print('Socket address is:', addr)
+
+        # Connect to upstream socket
         s.connect(addr)
 
-        # method = (bytes('GET /api/v1/', 'utf-8'))
-        # path = (bytes('api/v1/\n', 'utf-8'))
-        # protocol = (bytes('HTTP/1.1\n', 'utf-8'))
-        # encoding = (bytes('Accept-Encoding: gzip, deflate\n', 'utf-8'))
-        # accept = (bytes('Accept: */*\n', 'utf-8'))
-        # accept_language = (bytes('Accept-Language: en-us\n', 'utf-8'))
-        # host = (bytes('Host: telexi.seawolfsoftware.io\n\n', 'utf-8'))
+        my_touch = Interact(TouchPad(Pin(14)),
+                            touch_sensitivity=250,
+                            callback=lambda event, clicks: print(event, clicks))
 
-        request = bytes("GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
-        # request = b"".join([method])
-        s.send(request)
+        # Listen for touch events every 10ms
+        while True:
+            my_touch.update()
+            print(my_touch.value())
+            if my_touch.value() == 1:
+                request = bytes("GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
+                # request = b"".join([method])
+                s.send(request)
 
-        data = s.recv(1024)
-        time.sleep(1)
+                data = s.recv(1024)
+                time.sleep(1)
 
-        if data:
-            print(str(data, 'utf8'), end='')
-        else:
-            break
-        s.close()
+                if data:
+                    print(str(data, 'utf8'), end='')
+                else:
+                    continue
+                s.close()
+            time.sleep(1)
 
 
-def post_to_upstream_socket():
+def post_event_to_api():
 
     url = config['server_url']
     _, _, host, path = url.split('/', 3)
@@ -127,22 +127,21 @@ def post_to_upstream_socket():
     while True:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
-        print(addr)
+        print('Socket address is:', addr)
+
+        # Connect to upstream socket
         s.connect(addr)
 
-        body_dict = '{"device_id":"gdd", "is_button_on": "true"}\r\n'
-        raw_content_length = 'Content-Length: ' + str(len(body_dict)) + '\r\n\r\n'
         method = bytes('POST /', 'utf-8')
         path = bytes('api/v1/ ', 'utf-8')
         protocol = bytes('HTTP/1.1\r\n', 'utf-8')
         host = bytes("Host: telexi.seawolfsoftware.io\r\n", 'utf-8')
         content_type = bytes('Content-Type: application/json\r\n', 'utf-8')
-        content_length = bytes(raw_content_length, 'utf-8')
-
-        # body_dict = '{"device_id": "aye", "is_button_on": "true"}\r\n'
-        # dumped_json_string = json.dumps(body_dict)
 
         # convert json string to binary
+        body_dict = '{"device_id":"gdd", "is_button_on": "true"}\r\n'
+        raw_content_length = 'Content-Length: ' + str(len(body_dict)) + '\r\n\r\n'
+        content_length = bytes(raw_content_length, 'utf-8')
         binary_body = bytes(body_dict, 'utf-8')
 
         # Build binary request
@@ -169,17 +168,4 @@ def post_to_upstream_socket():
 
 
 connect_to_wifi()
-
-
-# post_to_upstream_socket()
-
-
-my_touch = Interact(TouchPad(Pin(14)),
-                    touch_sensitivity=250,
-                    callback=lambda event, clicks: print(event, clicks))
-
-
-# Listen for touch events every 10ms
-while True:
-    my_touch.update()
-    sleep_ms(10)
+connect_to_upstream_socket()
