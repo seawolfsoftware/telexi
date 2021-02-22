@@ -14,8 +14,14 @@ function CounterHook() {
         setPressevents([...pressevents, 'New Pres Event'])
     }
 
+    // useEffect(() => {
+    //     console.log("use effect is called")
+    // }, [count, text])
+
     useEffect(() => {
         console.log("use effect is called")
+        document.title = `you clicked ${count} times`
+
     })
 
     return (
@@ -49,7 +55,7 @@ function CounterHook() {
             })}
 
             <button onClick={addPressevent} className="btn btn-primary">Add Press Event</button>
-
+            <button onClick={() => setCount(count+1)} className="btn btn-primary">Change title</button>
         </div>
     )
 }
