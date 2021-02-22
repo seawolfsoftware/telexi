@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route, BrowserRouter} from 'react-router-dom';
-import Form from './components/Form';
+
 
 
 
@@ -14,10 +14,7 @@ function Router() {
     return(
 
         <BrowserRouter>
-
             <Route exact path ='/' component={App} />
-            <Route exact path ='/login' component={Form} />
-
         </BrowserRouter>
 
     )
