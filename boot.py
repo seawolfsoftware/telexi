@@ -103,20 +103,21 @@ def connect_to_upstream_socket():
         while True:
             my_touch.update()
             print(my_touch.value())
-            if my_touch.value() == 1:
-                request = bytes("GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
-                # request = b"".join([method])
-                s.send(request)
-
-                data = s.recv(1024)
-                time.sleep(1)
-
-                if data:
-                    print(str(data, 'utf8'), end='')
-                else:
-                    continue
-                s.close()
-            time.sleep(1)
+            # if my_touch.value() == 1:
+            #     print('dat touch')
+                # request = bytes("GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
+                # # request = b"".join([method])
+                # s.send(request)
+                #
+                # data = s.recv(1024)
+                # time.sleep(1)
+                #
+                # if data:
+                #     print(str(data, 'utf8'), end='')
+                # else:
+                #     continue
+                # s.close()
+            # time.sleep(1)
 
 
 def post_event_to_api():
