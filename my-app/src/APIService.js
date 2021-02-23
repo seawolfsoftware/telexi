@@ -39,5 +39,17 @@ export default class APIService {
     }
 
 
+    static LoginUser(body){
+        return fetch(`https://telexi.seawolfsoftware.io/api/v1/`,
+                    {
+            'method': 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body:JSON.stringify(body)
+    }).then(resp => resp.json())
+    }
+
+
 
 }

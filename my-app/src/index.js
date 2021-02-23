@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route, BrowserRouter} from 'react-router-dom';
-
+import Login from './components/Login';
 
 
 
@@ -14,7 +14,8 @@ function Router() {
     return(
 
         <BrowserRouter>
-            <Route exact path ='/' component={App} />
+            <Route exact path ='/' component={Login} />
+            <Route exact path ='/press_events' component={App} />
         </BrowserRouter>
 
     )

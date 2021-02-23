@@ -37,6 +37,8 @@ function App() {
       }
       return true
     })
+
+    setPressevents(new_pressevents)
   }
 
   const updatedInformation= (pressevent) => {
