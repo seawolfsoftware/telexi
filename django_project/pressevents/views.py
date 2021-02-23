@@ -1,15 +1,21 @@
-from rest_framework import generics
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from .models import PressEvent
-from .serializers import PressEventSerializer
+from .serializers import PressEventSerializer, UserSerializer
+from rest_framework import viewsets
+from django.contrib.auth.models import User
 
 
-class PressEventList(generics.ListCreateAPIView):
-    queryset = PressEvent.objects.all()
-
-    serializer_class = PressEventSerializer
-
-
-class PressEventDetail(generics.RetrieveUpdateAPIView):
+class PressEventViewSet(viewsets.ModelViewSet):
     queryset = PressEvent.objects.all()
     serializer_class = PressEventSerializer
+    permission_classes = [IsAuthenticated]
+    authentication_classes = (TokenAuthentication,)
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+    authentication_classes = (TokenAuthentication,)

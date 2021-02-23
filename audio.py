@@ -1,46 +1,27 @@
 # Ctrl-c to end
 
-print('LOAD: button.py')
+print('LOAD: audio.py')
 
 import sys
 import time
 import machine
 
 
-# def press():
-#
-#     print('Button PRESSED at:' )
-#     time.sleep(5)
-#
-#
-# led = machine.Pin(23, machine.Pin.OUT)
-# button_state = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_UP)
-#
-# while True:
-#     #  When a button is pressed, the corresponding pin is
-#     #  connected to the ground and its value goes to 0
-#     if button_state.value() == 0:
-#         pass
-#
-#     elif button_state.value() == 1:
-#         press()
-#         led.on()
-#         time.sleep(1)
+"""
+    - read 16-bit audio samples from a stereo formatted WAV file
+      stored in the internal MicroPython filesystem
+    - write audio samples to an I2S amplifier or DAC module
+    
+    Hardware tested:
+    - PCM5102 stereo DAC module
+    
+    WAV file will play continuously until a keyboard interrupt or esp32 reset
 
-# # - read 16-bit audio samples from a stereo formatted WAV file
-# #   stored in the internal MicroPython filesystem
-# # - write audio samples to an I2S amplifier or DAC module
-# #
-# # Hardware tested:
-# # - PCM5102 stereo DAC module
-# #
-# # The WAV file will play continuously until a keyboard interrupt is detected or
-# # the ESP32 is reset
+"""
 
 
 WAV_FILE = 'hellothere.wav'
 SAMPLE_RATE_IN_HZ = 8000
-
 
 
 bck_pin = machine.Pin(26)
@@ -48,8 +29,8 @@ ws_pin = machine.Pin(25)
 sdout_pin = machine.Pin(22)
 
 
-# channelformat setting:
-#     stereo WAV: channelformat=I2S.RIGHT_LEFT
+#  channelformat setting:
+#  stereo WAV: channelformat=I2S.RIGHT_LEFT
 audio_out = machine.I2S(
     machine.I2S.NUM1,
     bck=bck_pin,

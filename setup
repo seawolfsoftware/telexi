@@ -16,7 +16,8 @@ esptool.py --chip esp32 -p /dev/cu.usbserial-0001 write_flash --flash_mode=dio 0
 
 # enter the REPL prompt
 #picocom /dev/cu.usbserial-0001 -b115200
+# shellcheck disable=SC2164
+cd /Users/chaz/desktop/swsw/micropython
 
 # enter rshell
 rshell --buffer-size=30 -p /dev/cu.usbserial-0001 -a -e vim
-
