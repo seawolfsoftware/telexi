@@ -30,16 +30,46 @@ function App() {
     setEditPressevent(pressevent)
   }
 
+  const updatedInformation= (pressevent) => {
+      const new_pressevent = pressevents.map(mypressevent => {
+        if(mypressevent.id == pressevent.id){
+          return pressevent;
+        }
+        else{
+          return mypressevent;
+        }
+      })
+
+      setPressevents(new_pressevent)
+  }
+
+
+  const presseventForm= () => {
+    setEditPressevent({device_id: '', is_button_on: true, created_at: ''})
+  }
 
 
   return (
     <div className="App">
 
-      <h3>telexi dashboard</h3>
+    <div className="row">
+      <div className="col">
+        <h3>telexi stream</h3>
+        <br/>
+      </div>
+
+      <div className="col">
+        <button onClick={presseventForm} className="btn btn-primary">Insert Press Event</button>
+      </div>
+
+
+    </div>
 
 
       <PresseventList pressevents={pressevents} editButton={editButton} />
-      <Form pressevent={editPressevent}/>
+
+      {editPressevent ? <Form pressevent={editPressevent} updatedInformation = {updatedInformation}/> : null}
+
 
     </div>
   );
