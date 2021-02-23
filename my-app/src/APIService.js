@@ -23,5 +23,21 @@ export default class APIService {
             },
             body:JSON.stringify(body)
     }).then(resp => resp.json())
-}
+    }
+
+
+
+    static DeletePressevent(pressevent_id){
+        return fetch(`https://telexi.seawolfsoftware.io/api/v1/${pressevent_id}/`,
+        {
+            'method': 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+
+    }
+
+
+
 }

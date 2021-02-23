@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import APIService from '../APIService';
 
 
 function PresseventList(props) {
@@ -7,6 +7,13 @@ function PresseventList(props) {
 
     const editButton = (pressevent) => {
         props.editButton(pressevent)
+    }
+
+    const deleteButton = (pressevent) => {
+        APIService.DeletePressevent(pressevent.id)
+        .then(() => props.deleteButton(pressevent))
+        .catch(error => console.log(error))
+
     }
 
 
@@ -28,8 +35,8 @@ function PresseventList(props) {
           <button className = "btn btn-primary" onClick  = {() => editButton(pressevent)}>Update</button>
           </div>
 
-           <div className = "col">
-          <button className = "btn btn-danger">Delete</button>
+          <div className = "col">
+            <button onClick={() => deleteButton(pressevent)} className = "btn btn-danger">Delete</button>
           </div>
 
 

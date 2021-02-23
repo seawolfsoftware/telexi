@@ -30,6 +30,15 @@ function App() {
     setEditPressevent(pressevent)
   }
 
+  const deleteButton = (pressevent) => {
+    const new_pressevents = pressevents.filter(mypressevent => {
+      if(mypressevent.id === pressevent.id) {
+        return false
+      }
+      return true
+    })
+  }
+
   const updatedInformation= (pressevent) => {
       const new_pressevent = pressevents.map(mypressevent => {
         if(mypressevent.id == pressevent.id){
@@ -41,6 +50,12 @@ function App() {
       })
 
       setPressevents(new_pressevent)
+  }
+
+  const insertedInformation = (pressevent) => {
+    const new_pressevents = [...pressevents, pressevent]
+    setPressevents(new_pressevents)
+
   }
 
 
@@ -66,9 +81,9 @@ function App() {
     </div>
 
 
-      <PresseventList pressevents={pressevents} editButton={editButton} />
+      <PresseventList pressevents={pressevents} editButton={editButton} deleteButton={deleteButton}/>
 
-      {editPressevent ? <Form pressevent={editPressevent} updatedInformation = {updatedInformation}/> : null}
+      {editPressevent ? <Form pressevent={editPressevent} updatedInformation={updatedInformation} insertedInformation={insertedInformation}/> : null}
 
 
     </div>

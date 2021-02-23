@@ -24,10 +24,13 @@ function Form(props) {
     }
 
     const insertPressevent = () => {
-
+        APIService.InsertPressevent({device_id, is_button_on, created_at})
+        .then(resp => props.insertedInformation(resp))
     }
-    return (
 
+
+
+    return (
 
 
         <div>
@@ -47,16 +50,18 @@ function Form(props) {
 
                     <label htmlFor="is_button_on"
                             className="form-label">Button state</label>
-                    <input type="text"
+                    <input type="radio"
                             className="form-control"
                             id="is_button_on"
                             placeholder="Button state (ON / OFF)"
                             value={is_button_on}
                             onChange={e => setIsButtonOn(e.target.value)}/>
 
+
+
                     <label htmlFor="created_at"
                             className="form-label">Created at</label>
-                    <input type="text"
+                    <input type="datetime"
                             className="form-control"
                             id="created_at"
                             placeholder="Enter date and timestamp"
