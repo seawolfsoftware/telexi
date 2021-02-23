@@ -1,0 +1,11 @@
+html {background-color: #323232;}
+img {
+    width:50%;
+    height:50%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

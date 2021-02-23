@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['SECRET_KEY']
-    ALLOWED_HOSTS = ['telexi.seawolfsoftware.io']
+    ALLOWED_HOSTS = ['*', 'telexi.seawolfsoftware.io', 'seawolfsoftware.io']
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
     DATABASES = {
         'default': {
@@ -45,7 +46,11 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
+    STATICFILES_DIRS = (
+      os.path.join(BASE_DIR, 'static/'),
+    )
+    PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,6 +63,7 @@ INSTALLED_APPS = [
 
     # third party
     'rest_framework',
+    'corsheaders',
 
     # local
     'pressevents',
@@ -68,13 +74,19 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -140,5 +152,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
