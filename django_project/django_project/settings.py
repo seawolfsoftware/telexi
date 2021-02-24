@@ -76,6 +76,10 @@ INSTALLED_APPS = [
     'pressevents',
 ]
 
+REST_FRAMEWORK = {
+    'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
+}
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
