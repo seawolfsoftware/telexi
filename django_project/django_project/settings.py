@@ -20,7 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['SECRET_KEY']
-    ALLOWED_HOSTS = ['*', 'telexi.seawolfsoftware.io', 'seawolfsoftware.io']
+    ALLOWED_HOSTS = ['localhost',
+                     'telexi.seawolfsoftware.io',
+                     'seawolfsoftware.io',
+                     'telexi-frontend-e5wzf.ondigitalocean.app']
+
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
     DATABASES = {
