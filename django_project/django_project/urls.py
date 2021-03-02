@@ -10,7 +10,9 @@ urlpatterns = [
     path('', views.index),
     path('admin/', admin.site.urls),
     path('api/v1/', include('pressevents.urls')),
-    path('auth/', obtain_auth_token)
+    path('auth/', obtain_auth_token),
+    path('store/', include('store.urls', namespace='store'))
+
 ]
 
 if settings.DEBUG:
