@@ -1,0 +1,23 @@
+ /* For desktop: */
+@media only screen and (min-width: 768px) {
+
+  .swsw_logo {
+    display: block;
+    background-color: #333230;
+    position: bottom;
+    width: auto;
+    height: 300px;
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer_container {
+    background-color: #333230;
+    color: white;
+    height: 300px;
+  }
+
+}
+
+
