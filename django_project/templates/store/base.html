@@ -14,6 +14,8 @@
 </head>
 
 <body>
+<div id="page-container">
+    <div id="content-wrap">
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
             <div class="container-fluid">
@@ -83,17 +85,19 @@
         </nav>
     </header>
     <div id="content">{% block content %} {% endblock %}</div>
-</body>
+</div>
+<footer class="footer_container">
+    <div class="row">
 
-<footer class="footer_container row">
-    <div class="row justify-content-end">
-
-        <div class="col-3">
+        <div class="col">
           <img class="swsw_logo"
             src="{% static 'img/logo.png' %}"/>
         </div>
   </div>
 </footer>
+    </div>
+</body>
+
 
 
 </html>
