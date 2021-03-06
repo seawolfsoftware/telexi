@@ -18,7 +18,7 @@ class Cart:
 
     def add(self, product, qty):
         """
-        Adding and updating the users cart session data
+            Adding and updating the users basket session data
         """
         product_id = str(product.id)
 
@@ -35,7 +35,7 @@ class Cart:
         and return products
         """
         product_ids = self.cart.keys()
-        products = Product.objects.filter(id__in=product_ids)
+        products = Product.products.filter(id__in=product_ids)
         cart = self.cart.copy()
 
         for product in products:
