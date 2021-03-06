@@ -1,6 +1,11 @@
  /* For desktop: */
 @media only screen and (min-width: 768px) {
 
+    #home-container {
+        padding-bottom: 50px;
+    }
+
+
   .swsw_logo {
     display: block;
     background-color: #333230;
@@ -21,10 +26,14 @@
     height: 250px;
   }
 
+    .telexi_text {
+        font-size: 19px;
+    }
+
     #page-container {
       position: relative;
       min-height: 100vh;
-      padding-bottom: 1000px;
+      padding-bottom: 200px;
     }
 
     #content-wrap {
@@ -35,23 +44,23 @@
         float: right;
     }
 
-       .paragraph {
-        margin-top: 1%;
-        margin-bottom: 1%;
-        padding: 5px;
+      .paragraph {
+       color: #454343;
+        padding-top: 5px;
         display: block;
         font-size: 17px;
         margin-left: auto;
         margin-right: auto;
         line-height: 150%;
-        width: 60%;
+        width: 55%;
       }
 
       .question_headers {
+      color: #36383b;
         font-weight: 500;
         font-style: oblique;
-        margin-top: 5%;
-        margin-bottom: 3%;
+        margin-top: 4%;
+        margin-bottom: 2%;
         text-align: center;
       }
 
@@ -64,7 +73,8 @@
       }
 
       .hr {
-        width: 75%;
+        width: 55%;
+
         margin-left: auto;
         margin-right: auto;
       }
