@@ -1,0 +1,102 @@
+ /* For desktop: */
+@media only screen and (min-width: 768px) {
+
+    #home-container {
+        padding-bottom: 50px;
+    }
+
+
+  .swsw_logo {
+    display: block;
+    background-color: #333230;
+    position: bottom;
+    width: auto;
+    height: 250px;
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer_container {
+    background-color: #333230;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+  }
+
+    .telexi_text {
+        font-size: 19px;
+    }
+
+    #page-container {
+      position: relative;
+      min-height: 100vh;
+      padding-bottom: 200px;
+    }
+
+    #content-wrap {
+      padding-bottom: 100px;    /* Footer height */
+    }
+
+    #price {
+        float: right;
+    }
+
+      .paragraph {
+       color: #454343;
+        padding-top: 5px;
+        display: block;
+        font-size: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 150%;
+        width: 55%;
+      }
+
+      .question_headers {
+        color: #36383b;
+        font-weight: 500;
+        font-style: oblique;
+        margin-top: 4%;
+        margin-bottom: 2%;
+        text-align: center;
+      }
+
+      .index-img {
+            display: block;
+            max-height: 500px;
+            margin-left: -50%;
+      }
+
+      #profile-img{
+            display: block;
+            margin-top: -15%;
+            margin-left: -72%;
+            padding: 0;
+            height: 700px;
+      }
+
+      #touch_diagram_2 {
+            display: block;
+            height: 600px;
+            border-radius: 5%;
+            box-shadow: 5px 10px #888888;
+            margin-left: -20%;
+      }
+
+        .illustrations {
+            width: 50%;
+            margin-left: 25%;
+            margin-right: auto;
+        }
+
+      .hr {
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+}
+
+
