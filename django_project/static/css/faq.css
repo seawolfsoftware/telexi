@@ -35,6 +35,39 @@
         float: right;
     }
 
+       .paragraph {
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 5px;
+        display: block;
+        font-size: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 150%;
+        width: 60%;
+      }
+
+      .question_headers {
+        font-weight: 500;
+        font-style: oblique;
+        margin-top: 5%;
+        margin-bottom: 3%;
+        text-align: center;
+      }
+
+      .index-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            max-height: 500px;
+      }
+
+      .hr {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+      }
 }
 
 
