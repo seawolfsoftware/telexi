@@ -1,10 +1,86 @@
+/* For mobile: */
+#diagram-1 {
+    display: block
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 373px;
+    transform: scale(1.1);
+    padding-bottom: 5%;
+}
+#diagram-2 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 373px;
+    padding-bottom: 5%;
+    transform: scale(0.9);
+}
+
+#profile-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    transform: scale(2);
+}
+
+ .illustrations {
+    display: block;
+    width: auto;
+    max-height: 300px;
+    max-width: 300px;
+    transform: scale(1.45);
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ #illustration-1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
+    max-width: 300px;
+    transform: scale(1.8);
+    padding-top: 18%;
+    padding-bottom: 18%;
+}
+
+    .paragraph {
+       color: #454343;
+        margin-left: 3%;
+        font-size: 19px;
+        margin-right: 3%;
+        line-height: 155%;
+      }
+
+      .question_headers {
+        color: #36383b;
+        font-weight: 500;
+        font-style: oblique;
+        margin-top: 10%;
+        margin-bottom: 6%;
+        text-align: center;
+      }
+
+      .hr {
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
  /* For desktop: */
 @media only screen and (min-width: 768px) {
 
     #home-container {
         padding-bottom: 50px;
     }
-
 
   .swsw_logo {
     display: block;
@@ -44,7 +120,7 @@
         float: right;
     }
 
-      .paragraph {
+    .paragraph {
        color: #454343;
         padding-top: 5px;
         display: block;
@@ -64,39 +140,25 @@
         text-align: center;
       }
 
-      .index-img {
-            display: block;
-            max-height: 500px;
-            margin-left: -50%;
-      }
-
-      #profile-img{
-            display: block;
-            margin-top: -15%;
-            margin-left: -72%;
-            padding: 0;
-            height: 700px;
-      }
-
-      #touch_diagram_2 {
-            display: block;
-            height: 600px;
-            border-radius: 5%;
-            box-shadow: 5px 10px #888888;
-            margin-left: -20%;
-      }
-
-        .illustrations {
-            width: 50%;
-            margin-left: 25%;
-            margin-right: auto;
-        }
-
       .hr {
         width: 55%;
         margin-left: auto;
         margin-right: auto;
       }
+
+        .illustrations {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+         #illustration-1 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 800px;
+            max-width: auto;
+        }
 }
 
 

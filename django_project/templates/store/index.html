@@ -46,12 +46,16 @@
                 associate the word “water” with the real thing. When
                 its trainer speaks “water”, the dog receives water. </p>
 
-                <div>
-                    <img class="illustrations"
+                <div class="container">
+
+                    <img
+                    id="illustration-1"
+                    class=""
                     src="{% static 'img/serve.png' %}"
                     alt="trainer serving water to dog"
-                         height="500px"
                     />
+
+
                 </div>
 
                 <hr class="hr"/>
@@ -59,15 +63,15 @@
                 <p class="paragraph">Now let's equip the trainer with a
                 <em> telexi</em> device and smartphone app.</p>
 
-                <p class="paragraph">The trainer plugs the device into a power outlet.
-                He then opens his phone's wifi settings, and selects the <em>telexi</em> network,
-                establishing an internet connection with his local wifi router.</p>
+                <p class="paragraph">First he plugs the device into a power outlet. Then,
+                he opens his phone's wifi settings and selects the <em>telexi</em> network,
+                which establishes an internet connection with his local wifi router.</p>
 
-                <div>
+                <div class="container">
                     <img class="illustrations"
                     src="{% static 'img/loop.png' %}"
                     alt="diagram of flow"
-                         height="500px"
+
                     />
                 </div>
 
@@ -85,24 +89,35 @@
                     shapes called <em>lexigrams</em>. Because the shape of his dog's water dish is a circle,
                 he chooses that shape and connects the tile to the device.
                  </p>
-
                 <br/>
-                <p class="paragraph">/// Image here where man connects a tile to the device while dog watches on</p>
+
+                <p class="paragraph">
+                    /// TODO: Insert image where man connects tile to
+                    device as dog watches
+                </p>
                 <br/>
 
                 <p class="paragraph">Navigating back to the app, he
                  assigns the "water" audio clip to the tile. </p>
 
-                 <p class="paragraph"><em class="telexi_text">telexi </em> uploads
-                 the clip into his device's vocabulary,
-                which can now speak "water" from its position on the wall, floor, or surface.</p>
-
+                 <p class="paragraph"><em class="telexi_text">telexi </em>
+                     uploads the clip into his device's vocabulary,
+                     which can now speak "water" from its position
+                     on the wall, floor, or surface.
+                 </p>
                 <br/>
-                <p  class="paragraph">/// Insert image of dog touching tile with its nose as man watches on with a smile</p>
+
+                <p  class="paragraph">
+                    /// TODO: Insert image where dog touches tile with
+                    nose as man watches
+                </p>
                 <br/>
 
-                <p class="paragraph">Now, when the dog touches the
-                tile, it can request water! The dog telephoned a lexigram!</p>
+                <p class="paragraph">
+                    Now, when the dog touches the
+                    tile, it can request water!
+                    The dog telephoned a lexigram!
+                </p>
 
                 <hr class="hr"/>
 
@@ -110,51 +125,41 @@
                 Ok, so the dog can “talk” but isn’t this a novelty? </h4>
 
                 <p class="paragraph">True -- touching a tile to speak a word isn’t exactly
-                remarkable. Products like these exist already. </p><br/>
+                remarkable. Products like these exist already. </p>
 
                 <p class="paragraph">What separates <em class="telexi_text">telexi </em>
                 from traditional training buttons is the integration of <em>software</em>.</p>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-4">
-                            <img id="profile-img"
-                                 class=""
-                            src="{% static 'img/ava.png' %}"
-                            alt="ava profile image"/>
-                        </div>
-                        <div class="col-4">
-                            <img class="index-img"
-                            src="{% static 'img/touch_events_diagram.png' %}"
-                                 height="500px"
-                            alt="diagram of flow"/>
-                        </div>
-                        <div class="col-4">
-                            <img id="touch_diagram_2"
-                            src="{% static 'img/touch_events_diagram_2.png' %}"
-                                 height="500px"
-                            alt="calendar of touch events"/>
-                        </div>
-                    </div>
-                </div>
-
-
-                <p class="paragraph"><em class="telexi_text">telexi</em>'s app tracks
-                touch events over time to visualize patterns which emerge in data.
+                <p class="paragraph">
+                    <em class="telexi_text">telexi</em>'s app tracks
+                    touch events over time to visualize patterns which
+                    emerge in data.
                 </p>
 
+                <img    id="diagram-1"
+                        src="{% static 'img/touch_events_diagram.png' %}"
+                        alt="touch event diagram"/>
+                <img    id="diagram-2"
+                        src="{% static 'img/touch_events_diagram_2.png' %}"
+                        alt="diagram of touch event history"/>
                 <p class="paragraph">
                     The data is profiled and
                      sourced as a reference point for dogs of the same
                     breed, sex, age, or other criteria.
                 </p>
 
+
+         <img   id="profile-img"
+                         src="{% static 'img/ava.png' %}"
+                         alt="ava profile image"/>
+
+
                 <p class="paragraph">
-                <em class="telexi_text"> telexi</em>'s development was inspired by the
-                research of John W. Pilley, whose
-                work with Chaser the Border Collie
-                 demonstrates that dogs can comprehend sentences with a
-                prepositional object, verb, and direct object. For example,
+                    <em class="telexi_text"> telexi</em>'s development was inspired by the
+                    research of John W. Pilley, whose
+                    work with Chaser the Border Collie
+                     demonstrates that dogs can comprehend sentences with a
+                    prepositional object, verb, and direct object. For example,
                     "take snoopy To boston" from Trial 2a.
                     <sup>
                         <a href="https://www.sciencedirect.com/science/article/abs/pii/S002396901300026X">
@@ -164,15 +169,19 @@
                 </p>
 
 
-                <p class="paragraph">We believe dogs are capable of even more complex and
-                 abstract thought and we aim to develop a tool to enable dogs
-                    to <em>express</em> these thoughts.</p>
+                <p class="paragraph">
+                    We believe dogs are capable of even more complex and
+                    abstract thought and we aim to develop a tool to enable dogs
+                    to <em>express</em> these thoughts.
+                </p>
 
-                <p class="paragraph">In doing so, we wish to
+                <p class="paragraph">
+                    In doing so, we wish to
                     offer access to data for researchers like the late
                     John Pilley in order to accelerate humanity's understanding
                     of dog cognition, sourced from touch events by our own best
-                friends around the world.</p>
+                    friends around the world.
+                </p>
 </section>
 
   <div class="album py-5 bg-light">
