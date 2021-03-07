@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['SECRET_KEY']
-    ALLOWED_HOSTS = ['localhost',
+    ALLOWED_HOSTS = [
                      'telexi.seawolfsoftware.io',
                      'seawolfsoftware.io',
                      'telexi-frontend-e5wzf.ondigitalocean.app']
@@ -82,7 +82,6 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
     "https://telexi-frontend-e5wzf.ondigitalocean.app",
     "http://telexi-frontend-e5wzf.ondigitalocean.app",
 ]
@@ -108,7 +107,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
