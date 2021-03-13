@@ -9,6 +9,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['SECRET_KEY']
     ALLOWED_HOSTS = [
+                    'telexi.io',
                      'telexi.seawolfsoftware.io',
                      'seawolfsoftware.io',
                      'telexi-frontend-e5wzf.ondigitalocean.app']
