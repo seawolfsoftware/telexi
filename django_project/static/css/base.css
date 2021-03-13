@@ -146,12 +146,12 @@
     padding-bottom: 50px;
 }
 
-.seawolf-software-company-logo {
+#seawolf-software-company-logo {
     display: block;
     background-color: #333230;
     position: bottom;
     width: auto;
-    height: 250px;
+    height: 200px;
     float: right;
     margin-left: auto;
     margin-right: auto;
@@ -209,6 +209,8 @@
     width: 55%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 #man-serves-water-to-dog-illustration {
@@ -217,12 +219,15 @@
     margin-right: auto;
     max-height: 500px;
     max-width: 500px;
+    margin-bottom: 1%;
 }
 
 #water-audio-clip-passes-to-telexi-hub-illustration {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
     max-height: 800px;
     max-width: 800px;
 }
