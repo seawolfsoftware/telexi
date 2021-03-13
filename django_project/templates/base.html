@@ -38,6 +38,7 @@
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="shortcut icon" type="image/ico" href="{% static 'img/favicon.ico' %}">
 </head>
 
 <body>
@@ -134,17 +135,21 @@
 </div>
 
 <footer class="footer_container">
-    <div class=" row justify-content-center">
+    <div class="row">
 
+        <div class="col-2" >
+        </div>
         <div class="col-4" id="email">
             <a href = "mailto: info@seawolfsoftware.io">info@seawolfsoftware.io</a>
-
+        </div>
+        <div class="col-2">
         </div>
         <div id="seawolf-software-company-logo-container" class="col-4">
           <img id="seawolf-software-company-logo"
                alt="seawolf software company logo"
                 src="{% static 'img/logo.png' %}"/>
         </div>
+
     </div>
 </footer>
 
