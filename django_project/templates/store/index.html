@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}telexi store{% endblock %}
+{% block title %}telexi canine communication{% endblock %}
 {% block content %}
 
 
@@ -10,15 +10,21 @@
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
 
-        <img class="" width="270px"
-                 alt="telexi logo"
-                 src="{% static 'img/telexi_logo.jpg' %}">
+        <img class=""
+             width="270px"
+             alt="telexi communication platform logo"
+             src="{% static 'img/telexi_logo.jpg' %}">
         <p class="lead text-muted">enabling <em>expression</em> through experiment</p>
 
       </div>
     </div>
   </section>
 
+    <section>
+        <div id="banner">
+            <h3>Coming Spring 2021</h3>
+        </div>
+    </section>
 
     <section id="home-container">
                 <p class="paragraph">A compound of telephone and lexigram,
@@ -49,10 +55,10 @@
                 <div class="container">
 
                     <img
-                    id="illustration-1"
+                    id="man-serves-water-to-dog-illustration"
                     class=""
-                    src="{% static 'img/serve.png' %}"
-                    alt="trainer serving water to dog"
+                    src="{% static 'img/serve.jpg' %}"
+                    alt="trainer serves water dish to dog"
                     />
 
 
@@ -68,10 +74,11 @@
                 which establishes an internet connection with his local wifi router.</p>
 
                 <div class="container">
-                    <img class="illustrations"
-                    src="{% static 'img/loop.png' %}"
-                    alt="diagram of flow"
-
+                    <img id="water-audio-clip-passes-to-telexi-hub-illustration"
+                            src="{% static 'img/loop.jpg' %}"
+                            alt="diagram illustrates how the water audio clip is
+                                    delivered from the phone app to the
+                                    wifi router to the telexi hub"
                     />
                 </div>
 
@@ -121,73 +128,94 @@
 
                 <hr class="hr"/>
 
-                <h4 class="question_headers">
-                Ok, so the dog can “talk” but isn’t this a novelty? </h4>
-
-                <p class="paragraph">True -- touching a tile to speak a word isn’t exactly
-                remarkable. Products like these exist already. </p>
-
-                <p class="paragraph">What separates <em class="telexi_text">telexi </em>
-                from traditional training buttons is the integration of <em>software</em>.</p>
+                <h4 class="question_headers">Ok, so the dog can “talk” but isn’t this a novelty? </h4>
 
                 <p class="paragraph">
-                    <em class="telexi_text">telexi</em>'s app tracks
-                    touch events over time to visualize patterns which
-                    emerge in data.
+                    True -- touching a tile to speak
+                    a word isn’t exactly
+                    remarkable. Products like these exist already.
                 </p>
 
-                <img    id="diagram-1"
-                        src="{% static 'img/touch_events_diagram.png' %}"
-                        alt="touch event diagram"/>
-                <img    id="diagram-2"
-                        src="{% static 'img/touch_events_diagram_2.png' %}"
-                        alt="diagram of touch event history"/>
+                <p class="paragraph">What separates
+                    <em class="telexi_text">telexi </em>
+                    from traditional dog communication buttons is the integration of
+                    <em>software</em>.
+                </p>
+
                 <p class="paragraph">
-                    The data is profiled and
+                    <em class="telexi_text">telexi</em>'s
+                    app tracks touch events over time to visualize patterns which emerge in data.
+                </p>
+
+                <div class="row">
+                    <div class="col">
+                        <img id="diagram-1"
+                                src="{% static 'img/touch_events_diagram.png' %}"
+                                alt="diagram of dog's touch events"/>
+                    </div>
+                    <div class="col">
+                        <img    id="diagram-2"
+                        src="{% static 'img/touch_events_diagram_2.png' %}"
+                        alt="diagram of dog's touch events over time"/>
+                    </div>
+                </div>
+
+                <p class="paragraph">
+                    The data is streamed, profiled and
                      sourced as a reference point for dogs of the same
                     breed, sex, age, or other criteria.
                 </p>
 
-
          <img   id="profile-img"
-                         src="{% static 'img/ava.png' %}"
-                         alt="ava profile image"/>
-
+                 src="{% static 'img/ava.jpg' %}"
+                 alt="a single dog's profile avatar displays with a
+                       United States of America flag to
+                     indicate nationality, and a container displays
+                     which indicates sex by Female, age by 14 weeks,
+                     and breed by German Shepherd"/>
 
                 <p class="paragraph">
-                    <em class="telexi_text"> telexi</em>'s development was inspired by the
+                    <em class="telexi_text"> telexi</em>'s
+                    development was inspired by the
                     research of John W. Pilley, whose
                     work with Chaser the Border Collie
                      demonstrates that dogs can comprehend sentences with a
-                    prepositional object, verb, and direct object. For example,
-                    "take snoopy To boston" from Trial 2a.
-                    <sup>
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S002396901300026X">
-                            Read here
-                        </a>
-                    </sup>
+                    prepositional object, verb, and direct object. (Pilley recounts their
+                    triumphs and shortcomings in
+                    <a href="https://www.amazon.com/Chaser-Unlocking-Genius-Knows-Thousand/dp/0544334590">
+                        <em>Chaser: Unlocking the Genius of the Dog Who Knows a Thousand Words</em>
+                    </a>.)
                 </p>
 
+                    <p class="paragraph">
+                        Many other academics like Pilley have studied and published
+                        research on dog communication and perception.
+                        Their findings have informed our sense of what's
+                        possible with canine signals and lexicon.
+                    </p>
+
+                    <p class="paragraph">
+                        We hope to cooperate with labs and researchers to provide
+                        free limited access to anonymized data
+                        in order to accelerate humanity's understanding
+                        of dog cognition, sourced from touch events by our own best
+                        friends around the world.
+                    </p>
 
                 <p class="paragraph">
-                    We believe dogs are capable of even more complex and
-                    abstract thought and we aim to develop a tool to enable dogs
-                    to <em>express</em> these thoughts.
+                    seawolf software believes dogs are capable of complex and
+                    abstract thought. As a work in progress, we aim to develop <em>telexi</em>
+                    as a tool to better enable dogs to <em>express</em> these thoughts.
                 </p>
 
-                <p class="paragraph">
-                    In doing so, we wish to
-                    offer access to data for researchers like the late
-                    John Pilley in order to accelerate humanity's understanding
-                    of dog cognition, sourced from touch events by our own best
-                    friends around the world.
-                </p>
 </section>
 
   <div class="album py-5 bg-light">
     <div class="container">
 
-      <div class="pb-3 h5">All Products</div>
+      <div class="pb-3 h5">
+          All Products
+      </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
 
         {% for product in products %}
@@ -200,18 +228,22 @@
             <img class="img-fluid"
                  alt="Responsive image"
                  src="{{ product.image.url }}">
+
             <div class="card-body">
               <p class="card-text">
-
-                  {{ product.title }} <small id="price" class="text-muted">${{ product.price }}</small>
-
+                  {{ product.title }}
+                  <small id="price"
+                         class="text-muted">
+                      ${{ product.price }}
+                  </small>
               </p>
 
               <div class="d-flex justify-content-between align-items-end">
-                <small class="text-muted">{{ product.description }}</small>
+                <small class="text-muted">
+                    {{ product.description }}
+                </small>
               </div>
             </div>
-
           </div>
           </a>
         </div>
