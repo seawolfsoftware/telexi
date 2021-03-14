@@ -1,15 +1,5 @@
 
 /* MOBILE DESIGN */
-#how-it-works-container {
-    margin-top: 10%;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.success {
-    list-style-type: none;
-    color: green;
-}
 
 #seawolf-software-company-logo-container {
     display: block;
@@ -100,6 +90,7 @@
 .question_headers {
     color: #36383b;
     font-weight: 500;
+    font-style: oblique;
     margin-top: 10%;
     margin-bottom: 6%;
     text-align: center;
@@ -195,7 +186,6 @@
 }
 
 .paragraph {
-    text-align: center;
     color: #454343;
     padding-top: 5px;
     display: block;
@@ -209,6 +199,7 @@
 .question_headers {
     color: #36383b;
     font-weight: 500;
+    font-style: oblique;
     margin-top: 4%;
     margin-bottom: 2%;
     text-align: center;
@@ -235,22 +226,12 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     max-height: 800px;
     max-width: 800px;
 }
 
-#how-it-works-container {
-    margin-top: 3%;
-    width: 45%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.success {
-    list-style-type: none;
-    color: green;
-}
 
 }
 
