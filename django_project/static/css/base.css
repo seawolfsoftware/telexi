@@ -90,7 +90,6 @@
 .question_headers {
     color: #36383b;
     font-weight: 500;
-    font-style: oblique;
     margin-top: 10%;
     margin-bottom: 6%;
     text-align: center;
@@ -186,6 +185,7 @@
 }
 
 .paragraph {
+    text-align: center;
     color: #454343;
     padding-top: 5px;
     display: block;
@@ -199,7 +199,6 @@
 .question_headers {
     color: #36383b;
     font-weight: 500;
-    font-style: oblique;
     margin-top: 4%;
     margin-bottom: 2%;
     text-align: center;
