@@ -83,27 +83,37 @@ def web_page():
 
 
 def connect_to_upstream_socket():
+    #
+    # url = config['server_url']
+    # _, _, host, path = url.split('/', 3)
+    #
+    # while True:
+    #     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #     addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
+    #     print('Socket address is:', addr)
+    #
+    #     # Connect to upstream socket
+    #     s.connect(addr)
 
-    url = config['server_url']
-    _, _, host, path = url.split('/', 3)
+        # my_touch = Interact(TouchPad(Pin(14)),
+        #                     touch_sensitivity=250,
+        #                     callback=lambda event, clicks: print(event, clicks))
 
-    while True:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
-        print('Socket address is:', addr)
-
-        # Connect to upstream socket
-        s.connect(addr)
-
-        my_touch = Interact(TouchPad(Pin(14)),
-                            touch_sensitivity=250,
-                            callback=lambda event, clicks: print(event, clicks))
-
-        # Listen for touch events every 10ms
+        reset_pin = Pin(2, Pin.IN)
         while True:
-            my_touch.update()
-            print(my_touch.value())
-            # if my_touch.value() == 1:
+            print(reset_pin.value())
+
+        # touch_14 = TouchPad(Pin(14))
+        # while True:
+        #     touch_14.read()
+        #     print(touch_14.read())
+
+
+        # # Listen for touch events every 10ms
+        # while True:
+        #     my_touch.update()
+        #     print(my_touch.value())
+        #     # if my_touch.value() == 1:
             #     print('dat touch')
                 # request = bytes("GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
                 # # request = b"".join([method])
