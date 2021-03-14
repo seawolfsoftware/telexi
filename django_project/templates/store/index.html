@@ -6,7 +6,7 @@
 
 <main>
 
-  <section class="py-5 text-center container">
+  <section class="py-4 text-center container">
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
 
@@ -18,52 +18,50 @@
 
       </div>
     </div>
+      <hr id="head-hr"/>
   </section>
 
     <section>
         <div id="banner">
-            <h4>Coming Spring 2021</h4>
+            <h4 id="coming">Available Spring 2021</h4>
         </div>
     </section>
 
     <section id="home-container">
 
-                <div>
-                    <p class="paragraph"><em class="telexi_text"> telexi </em> (telephone + lexigram)
-                    is a platform to improve communication between humans and dogs.</p>
+                <div id="intro-container" class="paragraph">
+                    <em class="telexi_text">
+                    telexi </em> (telephone + lexigram) is a platform
+                    which employs touch signals to improve communication
+                    between humans and dogs.
                 </div>
 
-                <p class="paragraph">
-                    Physically, <em class="telexi_text">telexi </em>
-                    is a series of tiles with touch sensors and a speaker.
-                </p>
-
-                <p class="paragraph">
+            <p id="paragraph-1" class="paragraph">
                     When a dog touches a tile with its nose or paw,
-                    <em class="telexi_text">telexi </em> interprets this
+                    <em class="telexi_text">telexi </em> interprets the
                     touch as an <em>intent</em> and vocalizes the intent
                     with an audio clip.
                 </p>
 
-                <h4 class="question_headers">How it works</h4>
+                <hr class="hr-2"/>
 
-                <p class="paragraph">
-                    Let's consider an trainer who's conditioned his dog
+                <h4 class="question_headers">
+                    How it works
+                </h4>
+                <p id="paragraph-2" class="paragraph">
+                    Let's consider a trainer who's conditioned his dog
                      to associate the word <em>water</em> with the real thing. <br/><br/>
-                    When he gives his dog water, he speaks "water" out loud <br/>
+                    When he refills his dog's water, he speaks "water" out loud <br/>
                     so the dog knows the name by reference.
                 </p>
 
                 <div class="container">
-
                     <img
                     id="man-serves-water-to-dog-illustration"
                     class=""
                     src="{% static 'img/man-serves-water-to-dog.jpg' %}"
                     alt="trainer serves water dish to dog"
                     />
-
-
                 </div>
 
                 <p class="paragraph">
@@ -178,7 +176,9 @@
 
                 <hr class="hr"/>
 
-                <h4 class="question_headers">Ok, so the dog can “talk” but isn’t this a novelty? </h4>
+                <h4 class="question_headers">
+                    Ok, so the dog can “talk” but isn’t this a novelty?
+                </h4>
 
                 <p class="paragraph">
                     True -- touching a tile to speak
@@ -303,38 +303,41 @@
 
 
 
+    <section id="about">
 
-                <p class="paragraph">
-                    <em class="telexi_text"> telexi</em>'s
-                    development was inspired by the
-                    research of John W. Pilley, whose
-                    work with Chaser the Border Collie
-                     demonstrates that dogs can comprehend sentences with a
-                    prepositional object, verb, and direct object. (Pilley recounts their
-                    triumphs and shortcomings in
-                    <a href="https://www.amazon.com/Chaser-Unlocking-Genius-Knows-Thousand/dp/0544334590">
-                        <em>Chaser: Unlocking the Genius of the Dog Who Knows a Thousand Words</em>
-                    </a>).
-                </p>
+    <p class="paragraph">
+        <em class="telexi_text"> telexi</em>'s
+        development was inspired by the
+        research of John W. Pilley, whose
+        work with Chaser the Border Collie
+        demonstrates that dogs can comprehend sentences with a
+        prepositional object, verb, and direct object.
+        <br/><br/>(Pilley recounts their
+        triumphs and shortcomings with lexicon in
+        <a href="https://www.amazon.com/Chaser-Unlocking-Genius-Knows-Thousand/dp/0544334590">
+        <em>Chaser: Unlocking the Genius of the Dog Who Knows a Thousand Words</em>
+        </a>).
+    </p>
 
-                    <p class="paragraph">
-                        Many other academics like Pilley have studied and published
-                        research on dog communication and perception.
-                        Their findings have informed our sense of what's
-                        possible with canine signals and lexicon.
-                    </p>
+    <p class="paragraph">
+        Many academics like Pilley have published
+        research on dog communication and perception.
+        Their findings have informed our sense of what's
+        possible in canine signals.
+    </p>
 
-                <p class="paragraph">
-                    seawolf software believes dogs are capable of complex and
-                    abstract thought. As a work in progress, we aim to develop <em>telexi</em>
-                    as a tool to better enable dogs to <em>express</em> these thoughts.
-                </p>
+    <p class="paragraph">
+        seawolf software thinks dogs are capable of abstract, complex thought.
+        As a work in progress, we aim to develop <em>telexi</em>
+        as a tool to better enable dogs to <em>express</em> these thoughts.
+    </p>
 
-                    <p class="paragraph">
-                        In doing so, we hope to accelerate humanity's understanding
-                        of dog cognition, sourced from touch events by our own best
-                        friends around the world.
-                    </p>
+    <p class="paragraph">
+        In doing so, we hope to accelerate humanity's understanding
+        of dog cognition, sourced by touch events from our best
+        friends around the world.
+    </p>
+    </section>
 
 
 
