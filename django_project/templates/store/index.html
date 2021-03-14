@@ -22,80 +22,137 @@
 
     <section>
         <div id="banner">
-            <h3>Coming Spring 2021</h3>
+            <h4>Coming Spring 2021</h4>
         </div>
     </section>
 
     <section id="home-container">
-                <p class="paragraph">A compound of telephone and lexigram,
-                <em class="telexi_text"> telexi </em>
-                is a communication platform which seeks to improve
-                mutual understanding between humans and dogs. </p>
 
+                <div>
+                    <p class="paragraph"><em class="telexi_text"> telexi </em> (telephone + lexigram)
+                    is a platform to improve communication between humans and dogs.</p>
+                </div>
 
-                <h4 class="question_headers">What is it ...exactly?</h4>
-                <p class="paragraph">Physically, <em class="telexi_text">telexi </em>
-                 is a series of manufactured tiles with embedded touch sensors
-                and a speaker.</p>
+                <p class="paragraph">
+                    Physically, <em class="telexi_text">telexi </em>
+                    is a series of tiles with touch sensors and a speaker.
+                </p>
 
-                <p class="paragraph">The sensors enable <em class="telexi_text">telexi </em>
-                to receive and process touch events from dogs. </p>
+                <p class="paragraph">
+                    When a dog touches a tile with its nose or paw,
+                    <em class="telexi_text">telexi </em> interprets this
+                    touch as an <em>intent</em> and vocalizes the intent
+                    with an audio clip.
+                </p>
 
-                <p class="paragraph">When a dog touches a
-                tile with its nose or paw, <em class="telexi_text">telexi </em> interprets this
-                    touch as an <em>intent</em> and vocalizes the intent with an associated
-                audio clip.</p>
+                <h4 class="question_headers">How it works</h4>
 
-                <h4 class="question_headers">How does it work?</h4>
-
-                <p class="paragraph">Consider a dog who’s conditioned to
-                associate the word “water” with the real thing. When
-                its trainer speaks “water”, the dog receives water. </p>
+                <p class="paragraph">
+                    Let's consider an trainer who's conditioned his dog
+                     to associate the word <em>water</em> with the real thing. <br/><br/>
+                    When he gives his dog water, he speaks "water" out loud,
+                    so the dog knows the reference to the object by name.
+                </p>
 
                 <div class="container">
 
                     <img
                     id="man-serves-water-to-dog-illustration"
                     class=""
-                    src="{% static 'img/serve.jpg' %}"
+                    src="{% static 'img/man-serves-water-to-dog.jpg' %}"
                     alt="trainer serves water dish to dog"
                     />
 
 
                 </div>
 
+                <p class="paragraph">
+
+                    But knowing a word alone isn't so useful. <br/>
+                    The communication only flows one-way. The trainer can speak "water",
+                    but the dog can't. <br/>
+                    It remains unable to <em>request</em> water.
+                </p>
+
                 <hr class="hr"/>
 
-                <p class="paragraph">Now let's equip the trainer with a
-                <em> telexi</em> hub and smartphone app.</p>
+                <p class="paragraph">
+                    Now let's equip the trainer with a
+                    <em> telexi</em> hub and mobile app.
+                </p>
 
-                <p class="paragraph">First he plugs the hub into a power outlet. Then,
-                he opens his phone's wifi settings and selects the <em>telexi</em> hub's network,
-                which establishes an internet connection with his local wifi router.</p>
+            <div id="how-it-works-container"
+                class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="row">
+                            <h5>Connect hub to Wifi</h5>
+                        </div>
+                        <div class="row">
+                            <ul class="fa-ul">
+                                <li>plug hub into power outlet</li>
+                                <li>open mobile device's Wifi settings</li>
+                                <li>select <em>telexi</em> network</li>
+                                <li class="success">
+                                    <span class="fa-li">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    hub connected to Wifi
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                <div class="col-sm">
+                    <div class="row">
+                        <h5>Record word</h5>
+                    </div>
+
+                    <div class="row">
+                        <ul class="fa-ul">
+                            <li>open <em>telexi</em> app</li>
+                            <li>prompt displays to record word</li>
+                            <li>record word/re-record word</li>
+                            <li>Submit recorded word</li>
+                            <li class="success">
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                <em>telexi</em> uploads word to hub
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                </div>
+            </div>
 
                 <div class="container">
                     <img id="water-audio-clip-passes-to-telexi-hub-illustration"
-                            src="{% static 'img/loop.jpg' %}"
+                            src="{% static 'img/water-audio-clip-passes-to-telexi-hub.jpg' %}"
                             alt="diagram illustrates how the water audio clip is
                                     delivered from the phone app to the
                                     wifi router to the telexi hub"
                     />
                 </div>
 
-
-                <p class="paragraph">Now the trainer opens the <em class="telexi_text">telexi </em> app,
-                where he's prompted for a recording.
-                He speaks "water" and submits the audio clip.</p>
-
                 <hr class="hr" />
 
-                <p class="paragraph">Our trainer is now ready to attach a tile to the hub
-                to serve as a visual representation of "water".</p>
+                <p class="paragraph">
+                    The trainer can now attach a tile
+                    to represent the word <em>water</em>. <br/><br/>
+                    In order to distinguish between words,
+                    each tile must be unique. To accomplish this, we use shapes
+                    called <em>lexigrams</em>.
+                </p>
 
-                <p class="paragraph">In order to distinguish between words, we must use unique
-                    shapes called <em>lexigrams</em>. Because the shape of his dog's water dish is a circle,
-                he chooses that shape and connects the lexigram (tile) to the hub.
-                 </p>
+                <p class="paragraph">
+                    The shape of his dog's water dish is a circle, so
+                    the trainer chooses a circle and connects the
+                    lexigram to the hub at port 1.
+                </p>
                 <br/>
 
                 <p class="paragraph">
@@ -105,14 +162,7 @@
                 <br/>
 
                 <p class="paragraph">Navigating back to the app, he
-                 assigns the "water" audio clip to the lexigram. </p>
-
-                 <p class="paragraph"><em class="telexi_text">telexi </em>
-                     uploads the clip into the telexi hub's vocabulary,
-                     which can now speak "water" from its position
-                     on the wall, floor, or surface.
-                 </p>
-                <br/>
+                    assigns the <em>water</em> audio clip to the lexigram. </p>
 
                 <p  class="paragraph">
                     // TO-DO: Insert image where dog touches lexigram with nose as man watches
@@ -203,9 +253,7 @@
                 </p>
 
                     <p class="paragraph">
-                        In doing so, we hope to cooperate with students, researchers,
-                        and labs to provide limited access to anonymized data so that we
-                        may accelerate humanity's understanding
+                        In doing so, we hope to accelerate humanity's understanding
                         of dog cognition, sourced from touch events by our own best
                         friends around the world.
                     </p>
