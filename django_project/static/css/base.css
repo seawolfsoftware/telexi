@@ -1,7 +1,9 @@
 
 /* MOBILE DESIGN */
-
-#coming {
+#intro-container {
+    margin-top: 5%;
+}
+.coming {
     color: #9e93a3;
 }
 
@@ -282,7 +284,7 @@
 
 #banner {
     display: block;
-    height: 75px;
+    height: 130px;
     width: auto;
     text-align: center;
     margin: 0;
