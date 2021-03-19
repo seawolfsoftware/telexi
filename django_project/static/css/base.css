@@ -1,5 +1,15 @@
 
 /* MOBILE DESIGN */
+
+#newsletter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
 #hr-lottie {
 
     width: 100%;
@@ -355,4 +365,10 @@
         height: 120px;
     }
 
+    #newsletter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
 }
