@@ -1,7 +1,7 @@
 
 /* MOBILE DESIGN */
 #intro-container {
-    margin-top: 5%;
+
 }
 .coming {
     color: #9e93a3;
@@ -25,19 +25,15 @@
     width: auto;
     margin: 0;
     text-align: center;
-
 }
 
 #seawolf-software-company-logo {
-
     width: 100%;
     height: auto;
-
 }
 
 #banner {
     display: block;
-    height: 100px;
     width: auto;
     text-align: center;
     margin: 0;
@@ -49,18 +45,15 @@
     margin-right: auto;
     max-height: 350px;
     max-width: 350px;
-
 }
 
 #email {
     height: auto;
-
     background-color: #333230;
     text-decoration: none;
     color: white;
     width: 100%;
     text-align: center;
-
 }
 
 
@@ -69,7 +62,6 @@
     margin-left: auto;
     margin-right: auto;
     max-height: 300px;
-
 }
 
 #diagram-2 {
@@ -87,7 +79,6 @@
     margin-right: auto;
     max-height: 350px;
     max-width: 350px;
-
 }
 
 
@@ -96,7 +87,6 @@
     margin-left: 5%;
     margin-right: 5%;
     font-size: 19px;
-
     line-height: 155%;
 }
 
@@ -126,21 +116,23 @@
 }
 .footer_container {
     background-color: #333230;
-
 }
 
 
+/*                */
+/*                */
 /* DESKTOP DESIGN */
+/*                */
+/*                */
+
 
 @media only screen and (min-width: 768px) {
 
 #illustration-container {
-
     max-width: 70%;
     margin-left: 15%;
     margin-top: 5%;;
     margin-bottom: 5%;;
-
 }
 
 #diagram-1 {
@@ -148,9 +140,6 @@
     margin-left: auto;
     margin-right: auto;
     max-height: 450px;
-
-
-
 }
 
 #diagram-2 {
@@ -158,16 +147,14 @@
     margin-left: auto;
     margin-right: auto;
     max-height: 450px;
-
-
 }
+
 #profile-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-height: 300px;
 }
-
 
 #home-container {
     padding-bottom: 50px;
@@ -279,12 +266,11 @@
 
 #about {
     margin-top: 3%;
-
 }
 
 #banner {
     display: block;
-    height: 130px;
+    height: 120px;
     width: auto;
     text-align: center;
     margin: 0;
@@ -297,32 +283,28 @@
     margin-bottom: 2%;
 }
 
-    #paragraph-1 {
+#paragraph-1 {
     margin-bottom: 3%;
-    }
+}
 
-    #paragraph-2 {
-        width: 60%;
-    }
+#paragraph-2 {
+    width: 60%;
+}
 
-    #email {
-
+#email {
     margin-left: 75%;
-
     background-color: #333230;
     text-decoration: none;
     color: white;
     width: 100%;
     text-align: center;
-
 }
 
-#head-hr{
+#head-hr {
     width: 40%;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 
 }

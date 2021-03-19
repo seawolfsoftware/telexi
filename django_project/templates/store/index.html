@@ -22,17 +22,14 @@
   </section>
 
 
-    <section>
-        <p class="paragraph">
-            Dogs communicate through an array verbal and non-verbal signals
-            like body posture, facial expressions, and tail wagging.
-            Deciphering these signals is often challenging for humans.
-            Is a dog really happy when its tail wags?
-            We think so, but the answer lies in the situation's context
+    <section style="text-align:center">
+            Dogs communicate through an array <br/>of verbal and non-verbal signals
+            like <br/>
+            body posture, facial expressions, and tail wagging.<br/><br/>
+            <span id="context-intro">Deciphering these signals is often challenging for humans.<br/>
+            Is a dog really happy when its tail wags?</span><br/>
+            We think so, but the answer lies in the situation's context <br/>
             and requires human interpretation, a faulty approach at best.
-            </p>
-
-
     </section>
 
         <div id="banner">
@@ -44,19 +41,20 @@
 
     <section id="home-container">
 
-                <div id="intro-container" class="paragraph">
-                    <em class="telexi_text">
-                    telexi </em> (telephone + lexigram) is a new platform
-                    which employs touch signals to improve communication
-                    between humans and dogs.<br/><br/>
-                </div>
+            <div id="intro-container" class="paragraph">
+                <em class="telexi_text">telexi </em>
+                (telephone + lexigram) is a new platform <br/>
+                which employs touch signals to improve communication <br/>
+                between humans and dogs.<br/>
+            </div>
 
             <p id="paragraph-1" class="paragraph">
-                    When a dog touches a tile with its nose or paw,
-                    <em class="telexi_text">telexi </em> interprets the
-                    touch as an <em>intent</em> and vocalizes the intent
-                    with an audio clip.
-                </p>
+                When a dog touches a tile with its nose or paw, <br/>
+                <em class="telexi_text">telexi </em>
+                interprets the
+                touch as an <em>intent</em> <br/>and vocalizes the intent
+                with an audio clip.
+            </p>
 
                 <hr class="hr-2"/>
 
@@ -64,10 +62,10 @@
                     How it works
                 </h4>
                 <p id="paragraph-2" class="paragraph">
-                    Let's consider a trainer who has conditioned his dog
+                    Let's consider a trainer who has conditioned his dog<br/>
                      to associate the word <em>water</em> with the real thing. <br/><br/>
-                    When he refills his dog's water, he speaks "water" out loud <br/>
-                    so the dog knows the name by reference.
+                    When he refills his dog's water he speaks the word aloud <br/>
+                    so the dog knows the name "water" by reference.
                 </p>
 
                 <div class="container">
@@ -81,16 +79,16 @@
 
                 <p class="paragraph">
 
-                    <br/>But knowing a word alone isn't so useful. The communication only flows one-way. <br/><br/>
-                    The trainer can speak "water",
-                    but the dog can't. It remains unable to <em>request</em> the object by name.
+                    <br/>But knowing a word alone isn't very useful. <br/>Communication only flows one-way. <br/><br/>
+                    The trainer can speak "water", <br/>but the dog remains unable to utilize <br/>its
+                    understanding of the name independently.
                 </p>
 
                 <hr class="hr"/>
 
                 <p class="paragraph">
                     Now let's equip the trainer with a
-                    <em> telexi</em> hub and mobile app.
+                    <em> telexi</em> device and online profile.
                 </p>
 
             <div id="how-it-works-container"
@@ -98,42 +96,55 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="row">
-                            <h5>Connect hub to Wifi</h5>
+                            <h5>Enable Wifi</h5>
                         </div>
                         <div class="row">
                             <ul class="fa-ul">
-                                <li>plug hub into power outlet</li>
-                                <li>open mobile device's Wifi settings</li>
-                                <li>select <em>telexi</em> network</li>
+                                <li>Power on device</li>
+                                <li>Open Wifi settings on mobile device</li>
+                                <li>Select <em>telexi</em> network</li>
                                 <li class="success">
                                     <span class="fa-li">
                                         <i class="fas fa-check"></i>
                                     </span>
-                                    hub connected to Wifi
+                                    Device is online
                                 </li>
                             </ul>
                         </div>
                     </div>
-
-
+<div class="col-sm">
+                        <div class="row">
+                            <h5>Create Profile</h5>
+                        </div>
+                        <div class="row">
+                            <ul class="fa-ul">
+                                <li>Go to <em>telexi.io/activate</em></li>
+                                <li>Enter device's serial number</li>
+                                <li class="success">
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Profile created
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
                 <div class="col-sm">
                     <div class="row">
-                        <h5>Record word</h5>
+                        <h5>Record Word</h5>
                     </div>
 
                     <div class="row">
                         <ul class="fa-ul">
-                            <li>open <em>telexi</em> app</li>
-                            <li>prompt displays to record word</li>
-                            <li>record word</li>
-                            <li>Submit word</li>
+                            <li>Go to <em>telexi.io/profile</em></li>
+                            <li>Record word prompt appears</li>
+                            <li>Record word</li>
                             <li class="success">
                                 <span class="fa-li">
                                     <i class="fas fa-check"></i>
                                 </span>
-                                <em>telexi</em> uploads word to hub
+                                <em>telexi</em> uploads word to device
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -146,7 +157,7 @@
                             src="{% static 'img/water-audio-clip-passes-to-telexi-hub.jpeg' %}"
                             alt="diagram illustrates how the water audio clip is
                                     delivered from the phone app to the
-                                    wifi router to the telexi hub"
+                                    wifi router to the telexi device"
                     />
                 </div>
 
@@ -156,25 +167,26 @@
                     The trainer can now attach a tile
                     to represent the word <em>water</em>. <br/><br/>
                     In order to distinguish between words,
-                    each tile must be unique. To accomplish this, we use shapes
+                    each tile must be unique. <br/>
+                    To accomplish this we use shapes
                     called <em>lexigrams</em>.
                 </p>
 
                 <p class="paragraph">
-                    The shape of his dog's water dish is a circle, so
-                    the trainer chooses a circle and connects the
-                    lexigram to the hub at port 1.
+                    The shape of his dog's water dish is a circle, <br/>
+                    so the trainer selects a circle among the lexigram decals <br/>
+                    and connects the lexigram to the device at one of 10 ports.
                 </p>
                 <br/>
 
                 <p class="paragraph">
-                    // TO-DO: Insert image where man connects lexigram to hub as dog watches
+                    // TO-DO: Insert image where man connects lexigram to device as dog watches
                 </p>
                 <img src="#" alt="">
                 <br/>
 
-                <p class="paragraph">Navigating back to the app, he
-                    assigns the <em>water</em> audio clip to the lexigram. </p>
+                <p class="paragraph">Navigating back to the online profile, <br/>
+                    he assigns the word <em>water</em> to the lexigram. </p>
 
                 <p  class="paragraph">
                     // TO-DO: Insert image where dog touches lexigram with nose as man watches
@@ -190,24 +202,24 @@
                 <hr class="hr"/>
 
                 <h4 class="question_headers">
-                    Ok, so the dog can “talk” but isn’t this a novelty?
+                    Ok, the dog can “talk” but isn’t this a novelty?
                 </h4>
 
                 <p class="paragraph">
                     True -- touching a tile to speak
-                    a word isn’t exactly
-                    remarkable. Products like these exist already.
+                    a word isn’t exactly remarkable.
+                    <br/>
+                    Products like these exist already.
                 </p>
 
-                <p class="paragraph">What separates
-                    <em class="telexi_text">telexi </em>
-                    from traditional dog communication buttons is the integration of
+                <p class="paragraph">What separates <em class="telexi_text">telexi </em> <br/>
+                    from traditional dog communication buttons<br/> is the integration of
                     <em>software</em>.
                 </p>
 
                 <p class="paragraph">
                     <em class="telexi_text">telexi</em>'s
-                    app tracks touch events over time to visualize patterns which emerge in data.
+                    profiles track touch events over time to <br/> visualize patterns which emerge in data.
                 </p>
 
                 <div id="illustration-container">
@@ -229,9 +241,10 @@
 
 
                 <p class="paragraph">
-                    The data is streamed, profiled and
-                     sourced as a reference point for dogs of the same
-                    breed, sex, age, or other criteria.
+                     Data is continuously streamed and
+                     sourced <br/>as a reference
+                    for dogs of the same <br/>
+                    breed, sex, age, and other criteria.
                 </p>
 
          <img   id="profile-img"
