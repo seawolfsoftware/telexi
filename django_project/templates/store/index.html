@@ -34,11 +34,13 @@
     <section id="context" class="container">
                 <div class="row">
                     <div class="col-sm">
-                        Dogs communicate through an array <br/>of verbal and non-verbal signals
-                        like <br/> body posture, facial expressions, and tail wagging.<br/><br/>
-                        <span id="context-intro">Deciphering these signals is often challenging for humans.<br/>
+                        Dogs communicate through an array of verbal and non-verbal signals
+                        like body posture, facial expressions, and tail wagging.<br/><br/>
+                        <span id="context-intro">Deciphering these signals is often challenging for humans.
                         Is a dog really happy when its tail wags?</span><br/><br/>
-                        We think so, but the answer lies in the situation's context <br/>
+
+
+                        We think so, but the answer lies in the situation's context
                         and requires human interpretation, a faulty approach at best.
                     </div>
                 </div>
@@ -65,21 +67,74 @@
 
 
 
+  <div class="album py-5 bg-light">
+    <div class="container">
 
-    <section id="home-container">
+      <div class="pb-3 h5">
+          All Products
+      </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
 
-            <div id="intro-container" class="paragraph">
+        {% for product in products %}
+
+        <div class="col">
+          <a class="text-dark text-decoration-none"
+                   href="{{ product.get_absolute_url }}">
+          <div class="card shadow-sm">
+
+            <img class="img-fluid"
+                 alt="Responsive image"
+                 src="{{ product.image.url }}">
+
+            <div class="card-body">
+              <p class="card-text">
+                  {{ product.title }}
+                  <small id="price"
+                         class="text-muted">
+                      ${{ product.price }}
+                  </small>
+              </p>
+
+              <div class="d-flex justify-content-between align-items-end">
+                <small class="text-muted">
+                    {{ product.description }}
+                </small>
+              </div>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+    <section id="home-container"
+             class="container">
+
+
+            <div id="intro-container"
+                 class="">
                 <em class="telexi_text">telexi </em>
-                (telephone + lexigram) is a new platform <br/>
-                which employs touch signals to improve communication <br/>
-                between humans and dogs.<br/>
+                (telephone + lexigram) is a new platform
+                which employs touch signals to improve communication
+                between humans and dogs, supervised by a machine learning algorithm.
             </div>
 
-            <p id="paragraph-1" class="paragraph">
-                When a dog touches a tile with its nose or paw, <br/>
+            <p id="paragraph-1"
+               class="paragraph">
+                When a dog touches a tile with its nose or paw,
                 <em class="telexi_text">telexi </em>
                 interprets the
-                touch as an <em>intent</em> <br/>and vocalizes the intent
+                touch as an <em>intent</em> and vocalizes the intent
                 with an audio clip.
             </p>
 
@@ -88,10 +143,14 @@
                 <h4 class="question_headers">
                     How it works
                 </h4>
+
+        <hr class="hr"/>
+
+
                 <p id="paragraph-2" class="paragraph">
-                    Let's consider a trainer who has conditioned his dog<br/>
+                    Let's consider a trainer whose conditioned his dog
                      to associate the word <em>water</em> with the real thing. <br/><br/>
-                    When he refills his dog's water he speaks the word aloud <br/>
+                    When he refills the dog's water he speaks the word aloud
                     so the dog knows the name "water" by reference.
                 </p>
 
@@ -99,23 +158,24 @@
                     <img
                     id="man-serves-water-to-dog-illustration"
                     class=""
-                    src="{% static 'img/man-serves-water-to-dog.jpeg' %}"
+                    src="{% static 'img/man-serving-water.gif' %}"
                     alt="trainer serves water dish to dog"
                     />
                 </div>
 
                 <p class="paragraph">
 
-                    <br/>But knowing a word alone isn't very useful. <br/>Communication only flows one-way. <br/><br/>
-                    The trainer can speak "water", <br/>but the dog remains unable to utilize <br/>its
-                    understanding of the name independently.
+                    <br/>But knowing a word alone isn't very useful.
+                    Communication only flows one-way. <br/><br/>
+                    The trainer can speak "water", but the dog remains unable
+                    to utilize its understanding of the name independently.
                 </p>
 
                 <hr class="hr"/>
 
                 <p class="paragraph">
                     Now let's equip the trainer with a
-                    <em> telexi</em> device and online profile.
+                    <em> telexi</em> device.
                 </p>
 
             <div id="how-it-works-container"
@@ -229,7 +289,7 @@
                     The trainer can now attach a tile
                     to represent the word <em>water</em>. <br/><br/>
                     In order to distinguish between words,
-                    each tile must be unique. <br/>
+                    each tile must be unique.
                     To accomplish this we use shapes
                     called <em>lexigrams</em>.
                 </p>
@@ -237,36 +297,41 @@
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player src="https://assets9.lottiefiles.com/datafiles/xp79QLT43EaFdU2AQY5c4mWlHjLuZipUCphjmVHJ/Shapes/data.json"
                             background="transparent"
-                           speed="1"
-                            style="width: 425px; height: 200px; margin-left: auto; margin-right: auto;"  loop  autoplay>
+                            speed="1"
+                            style="width: 225px;
+                            height: 150px;
+                            margin-left: auto;
+                            margin-right: auto;"
+                           loop
+                           autoplay>
             </lottie-player>
 
                 <p class="paragraph">
-                    The shape of his dog's water dish is a circle, <br/>
-                    so the trainer selects a circle among the lexigram decals <br/>
+                    The shape of his dog's water dish is a circle,
+                    so the trainer selects a circle among the lexigram decals
                     and connects the lexigram to the device at one of 10 ports.
                 </p>
                 <br/>
 
-                <p class="paragraph">
-                    // TO-DO: Insert image where man connects lexigram to device as dog watches
-                </p>
-                <img src="#" alt="">
-                <br/>
+                <div class="container">
+                    <img id="man-connects-lexigram-illustration"
+                            src="{% static 'img/man-connects-lexigram.jpg' %}"
+                            alt=""
+                    />
+                </div>
 
-                <p class="paragraph">Navigating back to the online profile, <br/>
-                    he assigns the word <em>water</em> to the lexigram. </p>
+        <div class="container">
+            <div id="paragraph-lex-to-port">
+                    Navigating back to the profile at <em>telexi.io/profile</em>,
+                    he assigns the word <em>water</em>
+                to the lexigram at port 1. <br/><br/>
 
-                <p  class="paragraph">
-                    // TO-DO: Insert image where dog touches lexigram with nose as man watches
-                </p>
-                    <img src="#" alt="">
-                <br/>
-
-                <p class="paragraph">
-                    Now, when the dog touches the
+                Now, when the dog touches the
                     lexigram, it can request water!
-                </p>
+            </div>
+
+        </div>
+
 
                 <hr class="hr"/>
 
@@ -281,8 +346,8 @@
                     Products like these exist already.
                 </p>
 
-                <p class="paragraph">What separates <em class="telexi_text">telexi </em> <br/>
-                    from traditional dog communication buttons<br/> is the integration of
+                <p class="paragraph">What separates <em class="telexi_text">telexi </em>
+                    from traditional dog communication buttons is the integration of
                     <em>software</em>.
                 </p>
 
@@ -311,8 +376,8 @@
 
                 <p class="paragraph">
                      Data is continuously streamed and
-                     sourced <br/>as a reference
-                    for dogs of the same <br/>
+                     sourced as a reference
+                    for dogs of the same
                     breed, sex, age, and other criteria.
                 </p>
 
@@ -351,49 +416,7 @@
 </section>
 
 
-  <div class="album py-5 bg-light">
-    <div class="container">
 
-      <div class="pb-3 h5">
-          All Products
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-
-        {% for product in products %}
-
-        <div class="col">
-          <a class="text-dark text-decoration-none"
-                   href="{{ product.get_absolute_url }}">
-          <div class="card shadow-sm">
-
-            <img class="img-fluid"
-                 alt="Responsive image"
-                 src="{{ product.image.url }}">
-
-            <div class="card-body">
-              <p class="card-text">
-                  {{ product.title }}
-                  <small id="price"
-                         class="text-muted">
-                      ${{ product.price }}
-                  </small>
-              </p>
-
-              <div class="d-flex justify-content-between align-items-end">
-                <small class="text-muted">
-                    {{ product.description }}
-                </small>
-              </div>
-            </div>
-          </div>
-          </a>
-        </div>
-
-        {% endfor %}
-
-      </div>
-    </div>
-  </div>
 
 
 
@@ -434,7 +457,7 @@
         demonstrates that dogs can comprehend sentences with a
         prepositional object, verb, and direct object.
         <br/><br/>Pilley recounts their
-        triumphs and shortcomings with lexicon in <br/>
+        triumphs and shortcomings with lexicon in
         <a href="https://www.amazon.com/Chaser-Unlocking-Genius-Knows-Thousand/dp/0544334590">
         <em>Chaser: Unlocking the Genius of the Dog Who Knows a Thousand Words.</em></a>
     </p>
