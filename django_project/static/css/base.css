@@ -1,6 +1,24 @@
 
 /* MOBILE DESIGN */
 
+
+#paragraph-lex-to-port{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 90%;
+    text-align: center;
+}
+
+
+#introduction {
+    margin-top: 1%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
 #man-connects-lexigram-illustration {
     display: block;
     margin-left: auto;
@@ -387,6 +405,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 50%;
+        background: #f8f9fa! important;
     }
 
     #man-connects-lexigram-illustration {
@@ -402,5 +421,13 @@
         margin-right: auto;
         width: 40%;
         text-align: center;
+    }
+
+    #introduction {
+        margin-top: 1%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
     }
 }
