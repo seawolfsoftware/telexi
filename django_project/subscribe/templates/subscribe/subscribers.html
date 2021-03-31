@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+    <title>Subscribers List</title>
+
+    {% load static %}
+
+{% endblock %}
+
+{% block body %}
+
+    <table style="margin-top:15%;" id="" class="">
+        <tr>
+        </tr>
+        <tbody>
+            {% for recipient in recipient_list %}
+            <tr class="tr">
+                <td>
+                    {{ recipient.email }}
+                </td>
+                <td>
+                    {{ recipient.conf_num }}
+                </td>
+                <td>
+                    {{ recipient.confirmed }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

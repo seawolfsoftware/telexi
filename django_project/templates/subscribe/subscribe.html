@@ -1,0 +1,41 @@
+{% if redirect_anchor %}
+      <script type='text/javascript'>
+      $(document).ready(function(){
+          window.location = '#{{ redirect_anchor }}'
+      });
+      </script>
+      {% endif %}
+
+
+
+        <section id="newsletter"
+         class="container">
+                <div class="row">
+                    <div class="content-wrap col-sm">
+                        <h4 class="">Get email when in stock! <br/>active April 1</h4>
+
+                        <form method="POST">
+                            {% csrf_token %}
+
+
+                            <input type="text"
+                                   name=""
+                                   placeholder="Enter email"
+                                   style="padding: 2px">
+                            <input type="submit"
+                                   name=""
+                                   value="Subscribe"
+                                   style="background-color: #235789;
+                                          border: 1px solid black;
+                                          color: white;
+                                          padding: 8px 8px;
+                                          border-radius: 5px;
+                                          text-align: center;
+                                          text-decoration: none;
+                                          display: inline-block;
+                                          font-size: 16px;">
+                        </form>
+
+                    </div>
+                </div>
+</section>

@@ -67,102 +67,30 @@
         </section>
 
 
+        {% include 'store/all_products.html' %}
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="pb-3 h5">
-          All Products
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-
-        {% for product in products %}
-
-        <div class="col">
-          <a class="text-dark text-decoration-none"
-                   href="{{ product.get_absolute_url }}">
-          <div class="card shadow-sm">
-
-            <img class="img-fluid"
-                 alt="Responsive image"
-                 src="{{ product.image.url }}">
-
-            <div class="card-body">
-              <p class="card-text">
-                  {{ product.title }}
-                  <small id="price"
-                         class="text-muted">
-                      ${{ product.price }}
-                  </small>
-              </p>
-
-              <div class="d-flex justify-content-between align-items-end">
-                <small class="text-muted">
-                    {{ product.description }}
-                </small>
-              </div>
-            </div>
-          </div>
-          </a>
-        </div>
-
-        {% endfor %}
-
-      </div>
-    </div>
-  </div>
+        <section id="home-container"
+                 class="container">
 
 
+                <div id="intro-container"
+                     class="">
+                    <em class="telexi_text">telexi </em>
+                    (telephone + lexigram) is a new platform
+                    which employs touch signals to improve communication
+                    between humans and dogs, supervised by a machine learning algorithm.
+                    <br/><br/>
 
-
-
-
-
-    <section id="home-container"
-             class="container">
-
-
-            <div id="intro-container"
-                 class="">
-                <em class="telexi_text">telexi </em>
-                (telephone + lexigram) is a new platform
-                which employs touch signals to improve communication
-                between humans and dogs, supervised by a machine learning algorithm.
-                <br/><br/>
-
-                When a dog touches a tile with its nose or paw,
-                <em class="telexi_text">telexi </em>
-                interprets the
-                touch as an <em>intent</em> and vocalizes the intent
-                with an audio clip.
+                    When a dog touches a tile with its nose or paw,
+                    <em class="telexi_text">telexi </em>
+                    interprets the
+                    touch as an <em>intent</em> and vocalizes the intent
+                    with an audio clip.
             </div>
 
-        <section id="newsletter"
-         class="container">
-                <div class="row">
-                    <div class="content-wrap col-sm">
-                        <h4 class="">Get email when in stock! <br/>active April 1</h4>
-                        <form>
-                    <input type="text" name=""
-                           placeholder="Enter email"
-                           style="padding: 2px">
-                    <input type="submit"
-                           name=""
-                           value="Notify me"
-                           style="background-color: #235789;
-                                  border: 1px solid black;
-                                  color: white;
-                                  padding: 8px 8px;
-                                  border-radius: 5px;
-                                  text-align: center;
-                                  text-decoration: none;
-                                  display: inline-block;
-                                  font-size: 16px;">
-                  </form>
 
-                    </div>
-                </div>
-</section>
+        {% include 'subscribe/subscribe.html' %}
+
 
                 <h4 class="question_headers">
                     How it works

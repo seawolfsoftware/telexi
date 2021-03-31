@@ -94,6 +94,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
+
                             <a class="nav-link dropdown-toggle"
                                href="#"
                                id="navbarDropdown"
@@ -102,6 +103,7 @@
                                aria-expanded="false">
                                 Products
                             </a>
+
                             <ul class="dropdown-menu"
                                 aria-labelledby="navbarDropdown">
                                 <li>
@@ -110,9 +112,10 @@
                                         All
                                     </a>
                                 </li>
+
+
                                 {% for c in categories %}
-                                <li {% if category.slug == c.slug %}class="selected"
-                                    {% endif %}>
+                                <li >
                                     <a class="dropdown-item"
                                        href="{{ c.get_absolute_url }}">
                                         {{ c.name|title }}
@@ -120,8 +123,8 @@
                                 </li>
                                 {% endfor %}
 
-
                             </ul>
+
                         </li>
                     </ul>
                     <a type="button"

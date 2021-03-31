@@ -2,6 +2,15 @@ from django.shortcuts import get_object_or_404, render
 from .models import Category, Product
 
 
+def home(request):
+
+    products = Product.products.all()
+
+    return render(request,
+                  'store/index.html',
+                  {'products': products})
+
+
 def categories(request):
 
     return {
@@ -14,7 +23,8 @@ def product_all(request):
     products = Product.products.all()
 
     return render(request,
-                  'store/index.html',
+                  # 'store/index.html',
+                  'store/all_products.html',
                   {'products': products})
 
 
