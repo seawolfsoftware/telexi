@@ -2,6 +2,33 @@ from django.shortcuts import get_object_or_404, render
 from .models import Category, Product
 
 
+from django.shortcuts import render
+from . import forms
+from django.core.mail import send_mail
+from django_project.settings import EMAIL_HOST_USER
+
+
+def home(request):
+
+    products = Product.products.all()
+
+    return render(request,
+                  'store/home.html',
+                  {'products': products})
+
+
+def notify(request):
+    sub = forms.Notify()
+    if request.method == 'POST':
+        sub = forms.Notify(request.POST)
+        subject = 'Welcome to telexi'
+        message = 'telexi will be available June 1'
+        recipient = str(sub['Email'].value())
+        send_mail(subject, message, EMAIL_HOST_USER, [recipient], fail_silently=False)
+        return render(request, 'store/notify/success.html', {'recipient': recipient})
+    return render(request, 'store/notify/index.html', {'form': sub})
+
+
 def categories(request):
 
     return {
@@ -14,7 +41,7 @@ def product_all(request):
     products = Product.products.all()
 
     return render(request,
-                  'store/index.html',
+                  'store/products.html',
                   {'products': products})
 
 

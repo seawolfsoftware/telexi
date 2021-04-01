@@ -11,7 +11,7 @@ urlpatterns = [
     path('api/v1/', include('pressevents.urls')),
     path('auth/', obtain_auth_token),
     path('', include('store.urls', namespace='store')),
-    path('store/cart/', include('cart.urls', namespace='cart'))
+    path('store/cart/', include('cart.urls', namespace='cart')),
 
 ]
 
