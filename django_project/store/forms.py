@@ -2,7 +2,10 @@ from django import forms
 
 
 class Notify(forms.Form):
-    Email = forms.EmailField()
+
+    email = forms.EmailField(widget=forms.TextInput(
+        attrs={'type': 'email',
+               'placeholder': ('Enter email')}))
 
     def __str__(self):
-        return self.Email
+        return self.email

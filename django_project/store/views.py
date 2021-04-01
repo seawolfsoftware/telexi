@@ -12,21 +12,20 @@ def home(request):
 
     products = Product.products.all()
 
-    return render(request,
-                  'store/home.html',
-                  {'products': products})
-
-
-def notify(request):
     sub = forms.Notify()
+
     if request.method == 'POST':
         sub = forms.Notify(request.POST)
         subject = 'Welcome to telexi'
         message = 'telexi will be available June 1'
-        recipient = str(sub['Email'].value())
+        recipient = str(sub['email'].value())
         send_mail(subject, message, EMAIL_HOST_USER, [recipient], fail_silently=False)
         return render(request, 'store/notify/success.html', {'recipient': recipient})
-    return render(request, 'store/notify/index.html', {'form': sub})
+
+    return render(request,
+                  'store/home.html',
+                  {'products': products,
+                   'form': sub})
 
 
 def categories(request):
