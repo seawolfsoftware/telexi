@@ -1,4 +1,13 @@
+#post-titles {
+    text-decoration: none !important;
+    color: black !important;
+}
 
+#small {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 25px;
+}
 
 @keyframes blink {
 
@@ -34,7 +43,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@500&display=swap');
 
+#swsw {
+    font-family: 'Cuprum', sans-serif;
+}
 #quote {
   font-family: 'Source Code Pro', monospace;
   font-size: 18px;
@@ -46,12 +59,6 @@
     font-size: 35px;
 }
 
-
-#expression {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
 
 #kanzi-hieroglyph {
     font-size: 100px;
@@ -72,7 +79,7 @@
 }
 
 p {
-    text-align: center;
+    text-align: left;
 }
 
 #quote {
@@ -153,6 +160,9 @@ blockquote {
 }
 
 #kanzi-keys {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
     max-width: 600px;
     margin-top: 25px;

@@ -95,7 +95,13 @@
                                 Home
                             </a>
                         </li>
-
+                        <li class="nav-item active">
+                            <a class="nav-link"
+                               aria-current="page"
+                               href="{% url 'posts:index' %}">
+                                Blog
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
                                href="#"
@@ -127,13 +133,6 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item active">
-                            <a class="nav-link"
-                               aria-current="page"
-                               href="{% url 'posts:index' %}">
-                                Blog
-                            </a>
-                        </li>
                     </ul>
                     <a type="button"
                        role="button"
