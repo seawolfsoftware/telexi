@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'pressevents',
     'store',
     'cart',
+    'posts',
 ]
 
 REST_FRAMEWORK = {

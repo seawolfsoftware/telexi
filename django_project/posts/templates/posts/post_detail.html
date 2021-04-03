@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}telexi canine communication{% endblock %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Post Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/posts/index.css' %}">
+</head>
+<body>
+
+
+{% block content %}
+
+            <h2 class="subtitle">{{ post.title }}</h2>
+
+            <small>{{ post.created }}</small>
+
+            <p>
+                {{ post.body }}
+            </p>
+
+
+
+
+{% endblock %}
+
+
+
+</body>
+</html>

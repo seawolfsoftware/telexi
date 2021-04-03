@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}telexi canine communication{% endblock %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/posts/index.css' %}">
+</head>
+<body>
+
+
+<h1>Recent Posts</h1>
+
+
+{% block content %}
+    {% for post in posts %}
+    <a href="{% url 'posts:post_detail' post.slug %}">
+        <div class="post block">
+            <h2 class="subtitle">{{ post.title }}</h2>
+
+            <small>{{ post.created }}</small>
+        </div>
+    </a>
+
+
+    {% endfor %}
+
+
+
+{% endblock %}
+
+
+
+</body>
+</html>
