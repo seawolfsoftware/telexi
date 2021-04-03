@@ -34,10 +34,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-body{
-  padding: 40px;
-  background-color: #121212;
-}
 
 #quote {
   font-family: 'Source Code Pro', monospace;

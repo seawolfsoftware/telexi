@@ -4,10 +4,12 @@
 
 
 <head>
+    {% block head %}
     <meta charset="UTF-8">
     <title>Post Detail</title>
     {% load static %}
     <link rel="stylesheet" href="{% static '/css/posts/index.css' %}">
+    {% endblock %}
 </head>
 <body>
 
@@ -46,7 +48,7 @@
                 Imagine life without a keyboard.
             </p>
 
- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 <lottie-player id="hr-lottie"
                                 src="https://assets7.lottiefiles.com/datafiles/WIRy7Ny0KV28BJg/data.json"
                                background="transparent"
