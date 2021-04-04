@@ -60,6 +60,9 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="shortcut icon" type="image/ico" href="{% static 'img/favicon.ico' %}">
+
+    {% block head %}
+    {% endblock %}
 </head>
 
 <body>
@@ -92,7 +95,13 @@
                                 Home
                             </a>
                         </li>
-
+                        <li class="nav-item active">
+                            <a class="nav-link"
+                               aria-current="page"
+                               href="{% url 'posts:index' %}">
+                                Blog
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
                                href="#"
@@ -123,6 +132,7 @@
 
                             </ul>
                         </li>
+
                     </ul>
                     <a type="button"
                        role="button"

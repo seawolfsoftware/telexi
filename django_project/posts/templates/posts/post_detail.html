@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}telexi canine communication{% endblock %}
+
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>Post Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/posts/index.css' %}">
+    {% endblock %}
+</head>
+<body>
+
+
+{% block content %}
+
+<section id="post-container">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player id="hr-lottie"
+                            src="https://assets10.lottiefiles.com/packages/lf20_R7CRMj.json"
+                           background="transparent"
+                           speed="1.2"
+                            style="height: 50px"
+                           loop
+                           autoplay>
+            </lottie-player>
+
+        <h1 id="post-title">{{ post.title }}</h1>
+
+        <div id="post-content" class="row">
+
+            <blockquote>
+                <p id="quote">
+                    The keyboard is a central element of Pan Homo culture...
+                    its world and history in condensed symbolic form,
+                    resembling a portable photo album of shared
+                    memories.
+                </p>
+
+                <div id="quote-link">
+                    <a href=" https://doi.org/10.1057/9780230513389_2">Paraphrased from Design Features of Language <br/>- Kanzi’s Primal Language</a>
+                </div>
+            </blockquote>
+
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player id="hr-lottie"
+                                src="https://assets7.lottiefiles.com/datafiles/WIRy7Ny0KV28BJg/data.json"
+                               background="transparent"
+                               speed="1.2"
+                                style="height: 70px; margin-bottom: 15px;"
+                               loop
+                               autoplay>
+                </lottie-player>
+
+
+            <p style="text-align: center;">
+                Imagine life without a keyboard.
+            </p>
+
+                <p>
+                    No keyboard on your phone or computer. No cheating with a typewriter or telegraph.
+                </p>
+
+                <p>
+                    Whatever form it takes, the keyboard iterates <em>with</em> technology because it’s a practical tool for
+                    human expression. Combinations of keys allow anyone to share any thought with the world, with one condition...
+                </p>
+
+                <p id="understand-keys">
+                    <em><strong>someone exists who can read the keys!</strong></em>
+                </p>
+
+
+
+                <p>
+                    We often take this for granted. You're reading English, a language which benefits from a culture spanning the globe.
+                </p>
+
+                <div id="breakdown">
+                    ¿ ♭ut what if I querer etacinummoc 给不懂语言的人 ? <br/>
+                     Comprenderde u ¿理解 understand html> ?00111111
+                </div>
+
+                <hr />
+
+                <h4>A special bonobo</h4><br/><br/>
+
+                <p>
+                    The following images are visual representations of Kanzi,
+                    a 40 year-old bonobo who lives in Iowa.
+                    Kanzi knows the Chinese-like character below as his name in <em>lexigram</em>
+                    form, designed by sapien Sue Savage-Rumbaugh.<br/><br/>
+
+                    The third image is a drawing Kanzi produced of his own lexigram.
+                </p>
+
+
+                <div id="kanzi-container" class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            {% load static %}
+                            <img src="{% static 'img/kanzi_profile.jpeg' %}">
+
+                        </div>
+                        <div class="col-sm">
+                            <div class="col">
+                                <img src="{% static 'img/kanzi_lexigram.svg' %}">
+                            </div>
+                            <div>
+                                <img id="kanzi-art" src="{% static 'img/kanzi-art.jpeg' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <small id="small">Image Credits: Ape Initiative, Kevin Miyazaki, Kanzi Wamba</small>
+
+                <p>Equipped with his keys Kanzi has been able to share an immeasurable
+                wealth of ideas with others. He forms novel compounds from existing lexigrams,
+                    having insightfully referenced kale as "slow lettuce".</p>
+
+            <p>
+                Most significantly, Sue's methods have enabled Kanzi to become an active participant in
+                the Pan Homo culture shaped by sapiens.
+            </p>
+
+            <div class="container">
+                <div class="col-sm">
+                    <img id="kanzi-keys" src="{% static 'img/kanzi_keys.jpeg' %}">
+                </div>
+            </div>
+
+                <p>
+                    If the purpose of a key within a dictionary is to map a name
+                    to a value, then perhaps lifeforms begin with an empty dictionary and
+                    add new keys only when encountering new values through experiences
+                    with the environment or abstract thought.
+
+                </p>
+                <p>
+                    Memory retention of keys would depend on repeated interactions or
+                    rethinkings of the value, strengthening the association between
+                    the two.
+                </p>
+
+                <p>
+                    Constructing an input-output map is common in software.
+                    An algorithm receives labeled data as pairs and the goal is to learn the relationship between X and Y.
+                </p>
+
+                <p style="text-align:center;">
+                    I can't help but think ... what if Kanzi never received a keyboard
+                    <span id="question-mark-2">?</span>
+                </p>
+
+
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+
+                </script>
+                <lottie-player id="hr-lottie"
+                                src="https://assets5.lottiefiles.com/packages/lf20_wzq5hrhg.json"
+                               background="transparent"
+                               speed="2"
+                                style="height: 150px"
+                               loop
+                               autoplay>
+                </lottie-player>
+
+
+                    <h4 id="swsw">seaw{}lf software</h4>
+
+        </div>
+
+</section>
+
+{% endblock %}
+
+</body>
+</html>
