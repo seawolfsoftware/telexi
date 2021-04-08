@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}telexi canine communication{% endblock %}
+
 
 {% block head %}
 
-        <title>Posts</title>
+        {% block title %}
+            <title>Recent Posts</title>
+        {% endblock %}
 
         {% load static %}
         <link rel="stylesheet" href="{% static '/css/posts/posts.css' %}">
@@ -25,19 +27,21 @@
 
 
 
-<div class="container">
-    <div class="row">
-       <h1>Recent Posts</h1>
-    </div>
+
 
     {% block content %}
+
+    <div class="container">
+        <div class="row">
+           <h1 id="recent-posts">Recent Posts</h1>
+        </div>
 
         {% for post in posts %}
 
 
             <div class="row">
                  <a id="post-titles" href="{% url 'posts:post_detail' post.slug %}">
-                     <div id="individual-container" class="card bg-light mb-3" style="max-width: 50rem;">
+                     <div id="individual-container" class="card bg-light mb-3" style="max-width: 48rem;">
 
                       <div class="card-body">
                               <div class="col-sm" style="float:left;">
@@ -47,12 +51,33 @@
                               </div>
                               <div class="row">
                                   <div class="col">
-                                      <h5 class="card-title"><h2 class="subtitle">{{ post.title }}</h2></h5>
-                                      <div id="post-created">{{ post.created }}</div>
-                                        <p class="card-text">
-                                            Imagine life without a keyboard, a central element of human culture and history.
-                                            What if we could share it with others?
+                                      <h5 class="card-title"><h4>{{ post.title }}</h4></h5>
+                                      <div class="row">
+                                          <div class="col-2">
+                                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                                            </script>
+                                            <lottie-player id="hr-lottie"
+                                                            src="https://assets5.lottiefiles.com/packages/lf20_R1EQnA.json"
+                                                           background="transparent"
+                                                           speed="2"
+                                                            style="height: 30px; float: left;"
+                                                           loop
+                                                           autoplay>
+                                            </lottie-player>
+                                          </div>
+
+                                          <div id="post-created" class="col">
+                                              {{ post.created }}
+                                          </div>
+                                      </div>
+
+                                        <div class="row" id="preview-text">
+                                            <p class="card-text">
+                                            Imagine life without a keyboard, a central element of human history and culture.
+                                            Could we share the keyboard with other species?
                                         </p>
+                                        </div>
+
                                   </div>
                               </div>
 

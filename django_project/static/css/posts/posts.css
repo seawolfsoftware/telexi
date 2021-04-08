@@ -24,8 +24,9 @@
 }
 
 #post-created {
-    padding-bottom: 15px;
     font-size: 13px;
+    padding: 5px;
+    margin-left: -25px;
 }
 
 #individual-container {
@@ -35,4 +36,14 @@
 
 .card-body {
     background-color: white !important;
+}
+
+#preview-text {
+    margin-top: 20px;
+}
+
+#recent-posts {
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
 }
