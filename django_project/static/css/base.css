@@ -75,6 +75,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .success {
     list-style-type: none;
     color: green;
@@ -105,8 +106,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-height: 350px;
-    max-width: 350px;
+    max-height: 500px;
+    max-width: 500px;
 }
 
 #email {
@@ -150,7 +151,7 @@
     margin-right: 5%;
     font-size: 17px;
     line-height: 150%;
-    text-align: center;
+    text-align: left;
 }
 
 .question_headers {
@@ -262,7 +263,7 @@
     }
 
     .paragraph {
-        text-align: center;
+        text-align: left;
         color: #454343;
         padding-top: 5px;
         display: block;
@@ -289,14 +290,6 @@
         margin-bottom: 2%;
     }
 
-    #man-serves-water-to-dog-illustration {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-height: 500px;
-        max-width: 500px;
-        margin-bottom: 1%;
-    }
 
     #water-audio-clip-passes-to-telexi-hub-illustration {
         display: block;
@@ -310,7 +303,7 @@
     #how-it-works-container {
 
         margin-top: 3%;
-        width: 55%;
+        width: 65%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -357,9 +350,7 @@
         margin-bottom: 3%;
     }
 
-    #paragraph-2 {
-        width: 30%;
-    }
+
 
     #email {
         margin-left: 75%;
@@ -425,7 +416,7 @@
 
     #introduction {
         margin-top: 1%;
-        text-align: center;
+        text-align: left;
         margin-left: auto;
         margin-right: auto;
         width: 40%;
