@@ -1,44 +1,93 @@
 {% extends "base.html" %}
 
-{% block title %}telexi canine communication{% endblock %}
-
-<head>
-    <title>Posts</title>
-
-    {% load static %}
-    <link rel="stylesheet" href="{% static '/css/posts/index.css' %}">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-          crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-            crossorigin="anonymous"></script>
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-</head>
 
 
-<div class="container">
-    <div class="row">
-       <h1>Recent Posts</h1>
-    </div>
+{% block head %}
+
+        {% block title %}
+            <title>Recent Posts</title>
+        {% endblock %}
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static '/css/posts/posts.css' %}">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+              crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+                crossorigin="anonymous"></script>
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+{% endblock %}
+
+
+
+
 
     {% block content %}
 
+    <div class="container">
+        <div class="row">
+           <h1 id="recent-posts">Recent Posts</h1>
+        </div>
+
         {% for post in posts %}
+
+
             <div class="row">
-                 <a id="post-titles"
-                    href="{% url 'posts:post_detail' post.slug %}">
-                <div class="post block">
-                    <h2 class="subtitle">{{ post.title }}</h2>
+                 <a id="post-titles" href="{% url 'posts:post_detail' post.slug %}">
+                     <div id="individual-container" class="card bg-light mb-3" style="max-width: 48rem;">
 
-                    <small>{{ post.created }}</small>
-                </div>
-            </a>
+                      <div class="card-body">
+                              <div class="col-sm" style="float:left;">
+                                  {% load static %}
+                                  <img id="side-image" src="{% static 'img/kanzi_profile.jpeg' %}"><br/>
+                                  <div id="caption">Image credit Ape Initiative</div>
+                              </div>
+                              <div class="row">
+                                  <div class="col">
+                                      <h5 class="card-title"><h4>{{ post.title }}</h4></h5>
+                                      <div class="row">
+                                          <div class="col-2">
+                                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                                            </script>
+                                            <lottie-player id="hr-lottie"
+                                                            src="https://assets5.lottiefiles.com/packages/lf20_R1EQnA.json"
+                                                           background="transparent"
+                                                           speed="2"
+                                                            style="height: 30px; float: left;"
+                                                           loop
+                                                           autoplay>
+                                            </lottie-player>
+                                          </div>
 
+                                          <div id="post-created" class="col">
+                                              {{ post.created }}
+                                          </div>
+                                      </div>
+
+                                        <div class="row" id="preview-text">
+                                            <p class="card-text">
+                                            Imagine life without a keyboard, a central element of human history and culture.
+                                            Could we share the keyboard with other species?
+                                        </p>
+                                        </div>
+
+                                  </div>
+                              </div>
+
+
+                      </div>
+                    </div>
+
+                 </a>
             </div>
+
         {% endfor %}
 
     {% endblock %}

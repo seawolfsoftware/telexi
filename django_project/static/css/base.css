@@ -1,5 +1,8 @@
 
 /* MOBILE DESIGN */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;1,300;1,400;1,700&display=swap');
+
+
 
 
 #paragraph-lex-to-port{
@@ -75,6 +78,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .success {
     list-style-type: none;
     color: green;
@@ -105,8 +109,10 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-height: 350px;
-    max-width: 350px;
+    max-height: 500px;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #email {
@@ -150,18 +156,28 @@
     margin-right: 5%;
     font-size: 17px;
     line-height: 150%;
-    text-align: center;
+    text-align: left;
 }
 
-.question_headers {
-    color: #36383b;
-    font-weight: 500;
-    margin-top: 10%;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-bottom: 6%;
+#novelty-text {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
+
+#how-it-works {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    width: 100%;
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 
 .hr {
     width: 65%;
@@ -262,7 +278,7 @@
     }
 
     .paragraph {
-        text-align: center;
+        text-align: left;
         color: #454343;
         padding-top: 5px;
         display: block;
@@ -273,13 +289,6 @@
         width: 45%;
     }
 
-    .question_headers {
-        color: #36383b;
-        font-weight: 500;
-        margin-top: 1%;
-        margin-bottom: 2%;
-        text-align: center;
-    }
 
     .hr {
         width: 55%;
@@ -289,14 +298,6 @@
         margin-bottom: 2%;
     }
 
-    #man-serves-water-to-dog-illustration {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-height: 500px;
-        max-width: 500px;
-        margin-bottom: 1%;
-    }
 
     #water-audio-clip-passes-to-telexi-hub-illustration {
         display: block;
@@ -310,7 +311,7 @@
     #how-it-works-container {
 
         margin-top: 3%;
-        width: 55%;
+        width: 65%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -357,9 +358,7 @@
         margin-bottom: 3%;
     }
 
-    #paragraph-2 {
-        width: 30%;
-    }
+
 
     #email {
         margin-left: 75%;
@@ -425,9 +424,30 @@
 
     #introduction {
         margin-top: 1%;
-        text-align: center;
+        text-align: left;
         margin-left: auto;
         margin-right: auto;
         width: 40%;
     }
+
+
+#novelty-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#how-it-works {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    width: 50%;
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 }
