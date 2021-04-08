@@ -1,0 +1,38 @@
+#side-image {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#content-wrap {
+    background-color: #F8F8F8;
+    padding-bottom: 200px;
+}
+
+#post-titles {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+#small {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#caption {
+    font-size: 11px;
+}
+
+#post-created {
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+
+#individual-container {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.card-body {
+    background-color: white !important;
+}

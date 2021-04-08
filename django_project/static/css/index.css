@@ -9,3 +9,6 @@ img {
   margin-right: auto;
   width: 50%;
 }
+body {
+    position: relative;
+}
