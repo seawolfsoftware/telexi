@@ -103,6 +103,10 @@ def connect_to_upstream_socket():
         while True:
             my_touch.update()
             print(my_touch.value())
+
+
+
+
             # if my_touch.value() == 1:
             #     print('dat touch')
                 # request = bytes("GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
