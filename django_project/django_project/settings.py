@@ -86,6 +86,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "https://telexi-frontend-e5wzf.ondigitalocean.app",
     "http://telexi-frontend-e5wzf.ondigitalocean.app",
+    "http://127.0.0.1:8000",
+    "http://192.168.0.10:3000",
 ]
 
 ROOT_URLCONF = 'django_project.urls'
