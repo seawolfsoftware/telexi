@@ -98,43 +98,21 @@ def connect_to_upstream_socket():
 
 def listen_for_touch_events():
 
-        # pin_14 = Interact(TouchPad(Pin(14)),
-        #                     touch_sensitivity=250,
-        #                     callback=lambda event, clicks: print(event, clicks))
-        #
-        # pin_13 = Interact(TouchPad(Pin(13)),
-        #                   touch_sensitivity=250,
-        #                   callback=lambda event, clicks: print(event, clicks))
+        pin_14 = Interact(TouchPad(Pin(14)),
+                            touch_sensitivity=250,
+                            callback=lambda event, clicks: print(event, clicks))
 
         pin_12 = Interact(TouchPad(Pin(12)),
                           touch_sensitivity=250,
                           callback=lambda event, clicks: print(event, clicks))
 
-        led = Pin(2, Pin.OUT)
-
         # Listen for touch events every 10ms
         while True:
-            # pin_14.update()
-            # pin_13.update()
+            pin_14.update()
             pin_12.update()
 
-            if pin_12.value() == 1:
-                led.on()
-                print('Goldy')
-
-            elif pin_12.value() == 0:
-                led.off()
-                print('NO Goldy')
-
-            # while pin_13.value() == 1:
-            #     print('PIN-13: Outside')
-            #     pin_23.on()
-            #
-            # while pin_14.value() == 1:
-            #     print('PIN-14: Giraffe')
-            #     pin_23.on()
-
-
+            print(pin_14.value())
+            print(pin_12.value())
 
             # if pin_14.value() == 1:
             #     print('dat touch')
