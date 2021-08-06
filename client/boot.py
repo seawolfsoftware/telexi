@@ -4,6 +4,7 @@ import socket
 import time
 from Interact import *
 from machine import Pin, TouchPad
+import esp32
 
 # Read config file from file system into json object
 with open('config.json') as f:
@@ -112,12 +113,14 @@ def listen_for_touch_events():
 
         led = Pin(2, Pin.OUT)
 
+        hall_sensor_value = esp32.hall_sensor()
+
         # Listen for touch events every 10ms
         while True:
-            # pin_14.update()
-            # pin_13.update()
             pin_12.update()
-
+            # pin_13.update()
+            # pin_12.update()
+            #
             if pin_12.value() == 1:
                 led.on()
                 print('Goldy')
@@ -126,6 +129,7 @@ def listen_for_touch_events():
                 led.off()
                 print('NO Goldy')
 
+            # print('Magnetic value: ', hall_sensor_value)
             # while pin_13.value() == 1:
             #     print('PIN-13: Outside')
             #     pin_23.on()
