@@ -1,0 +1,5 @@
+pyserial==3.5
+machine~=0.0.1
+Django~=3.1.6
+djangorestframework~=3.12.2
+django-cors-headers~=3.7.0

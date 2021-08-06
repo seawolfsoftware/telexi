@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/v1/', include('pressevents.urls')),
     path('auth/', obtain_auth_token),
     path('posts/', include('posts.urls', namespace='posts')),
+    path('', views.index, name='index'),
 
 ]
 
