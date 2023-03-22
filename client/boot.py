@@ -118,48 +118,18 @@ def listen_for_touch_events():
 
         led = Pin(2, Pin.OUT)
 
-        hall_sensor_value = esp32.hall_sensor()
 
         # Listen for touch events every 10ms
         while True:
             pin_12.update()
-            # pin_13.update()
-            # pin_12.update()
-            #
+
             if pin_12.value() == 1:
                 led.on()
-                print('Goldy')
-
-            elif pin_12.value() == 0:
+                print('Outside')
+                post_event_to_api()
                 led.off()
-                print('NO Goldy')
 
-            # print('Magnetic value: ', hall_sensor_value)
-            # while pin_13.value() == 1:
-            #     print('PIN-13: Outside')
-            #     pin_23.on()
-            #
-            # while pin_14.value() == 1:
-            #     print('PIN-14: Giraffe')
-            #     pin_23.on()
-
-
-
-            # if pin_14.value() == 1:
-            #     print('dat touch')
-                # request = bytes("GET /api/v1/ HTTP/1.1\r\nHost: telexi.seawolfsoftware.io\r\n\r\n", 'utf-8')
-                # # request = b"".join([method])
-                # s.send(request)
-                #
-                # data = s.recv(1024)
-                # time.sleep(1)
-                #
-                # if data:
-                #     print(str(data, 'utf8'), end='')
-                # else:
-                #     continue
-                # s.close()
-            # time.sleep(1)
+            continue
 
 
 def post_event_to_api():
@@ -167,50 +137,48 @@ def post_event_to_api():
     url = config['server_url']
     _, _, host, path = url.split('/', 3)
 
-    while True:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
-        print('Socket address is:', addr)
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    addr = socket.getaddrinfo(config['server_ip'], 8000)[0][-1]
+    print('Socket address is:', addr)
 
-        # Connect to upstream socket
-        s.connect(addr)
+    # Connect to upstream socket
+    s.connect(addr)
 
-        method = bytes('POST /', 'utf-8')
-        path = bytes('api/v1/ ', 'utf-8')
-        protocol = bytes('HTTP/1.1\r\n', 'utf-8')
-        host = bytes("Host: telexi.seawolfsoftware.io\r\n", 'utf-8')
-        content_type = bytes('Content-Type: application/json\r\n', 'utf-8')
+    method = bytes('POST /', 'utf-8')
+    path = bytes('api/v1/press_events/ ', 'utf-8')
+    protocol = bytes('HTTP/1.1\r\n', 'utf-8')
+    host = bytes("Host: 10.0.0.147\r\n", 'utf-8')
+    content_type = bytes('Content-Type: application/json\r\n', 'utf-8')
 
-        # convert json string to binary
-        body_dict = '{"device_id":"gdd", "is_button_on": "true"}\r\n'
-        raw_content_length = 'Content-Length: ' + str(len(body_dict)) + '\r\n\r\n'
-        content_length = bytes(raw_content_length, 'utf-8')
-        binary_body = bytes(body_dict, 'utf-8')
+    # convert json string to binary
+    body_dict = '{"device_id":"gdd", "is_button_on": "true"}\r\n'
+    raw_content_length = 'Content-Length: ' + str(len(body_dict)) + '\r\n\r\n'
+    content_length = bytes(raw_content_length, 'utf-8')
+    binary_body = bytes(body_dict, 'utf-8')
 
-        # Build binary request
-        request = b"".join([method,
-                            path,
-                            protocol,
-                            host,
-                            content_type,
-                            content_length,
-                            binary_body])
+    # Build binary request
+    request = b"".join([method,
+                        path,
+                        protocol,
+                        host,
+                        content_type,
+                        content_length,
+                        binary_body])
 
-        # Send request to endpoint
-        s.send(request)
+    # Send request to endpoint
+    s.send(request)
 
-        # Read response into buffer
-        data = s.recv(1024)
-        time.sleep(3)
+    # Read response into buffer
+    data = s.recv(1024)
+    time.sleep(3)
 
-        if data:
-            print(str(data, 'utf8'), end='')
-        else:
-            break
-        s.close()
+    if data:
+        print(str(data, 'utf8'), end='')
+
+    s.close()
 
 
 connect_to_wifi()
 # start_local()
 # connect_to_upstream_socket()
-# listen_for_touch_events()
+listen_for_touch_events()
