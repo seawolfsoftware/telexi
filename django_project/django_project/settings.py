@@ -85,7 +85,13 @@ CORS_ALLOWED_ORIGINS = [
     "https://ask-allspecieskeyboard-vt5vh.ondigitalocean.app",
     "http://127.0.0.1:8000",
     "http://192.168.0.10:3000",
+    "http://10.0.0.147:8000",
+    "http://10.0.0.147:3000",
 ]
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'django_project.urls'
 
