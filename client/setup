@@ -6,18 +6,19 @@ ls /dev/cu.*
 
 # cd to local Python executables where esptool.py is
 # shellcheck disable=SC2164
-cd /library/frameworks/python.framework/versions/3.8/bin
+# cd /library/frameworks/python.framework/versions/3.8/bin
+# cd /Users/chazselph/code/esptool
 
 # erase flash
 esptool.py --chip esp32 --port /dev/cu.usbserial-0001 erase_flash
 
 # write firmware to microprocessor
-esptool.py --chip esp32 -p /dev/cu.usbserial-0001 write_flash --flash_mode=dio 0x1000 esp32-idf3-i2s-2020-05-13-v1-12.bin
+esptool.py --chip esp32 -p /dev/cu.usbserial-0001 write_flash --flash_mode=dio 0x1000 ../bin/esp32-idf3-i2s-2020-05-13-v1-12.bin
 
 # enter the REPL prompt
 #picocom /dev/cu.usbserial-0001 -b115200
 # shellcheck disable=SC2164
-cd /Users/chaz/desktop/swsw/micropython
+# cd /Users/chaz/desktop/swsw/micropython
 
 # enter rshell
 rshell --buffer-size=30 -p /dev/cu.usbserial-0001 -a -e vim

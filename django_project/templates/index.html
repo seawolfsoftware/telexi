@@ -1,17 +1,478 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>seawolf software</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static '/css/index.css' %}">
-</head>
-<body>
 
+{% extends "base.html" %}
 {% load static %}
-<img src="{% static 'img/logo.png' %}"
-     alt="seawolf software logo"
-     class="center">
+{% block title %}telexi canine communication{% endblock %}
+{% block content %}
 
-</body>
-</html>
+
+<main>
+
+  <section class="py-4 text-center container">
+    <div class="row py-lg-3">
+      <div class="col-lg-6 col-md-8 mx-auto">
+
+        <img class=""
+             width="270px"
+             alt="telexi communication platform logo"
+             src="{% static 'img/telexi_logo.jpeg' %}">
+        <p class="lead text-muted">enabling <em>expression</em> through experiment</p>
+
+      </div>
+    </div>
+
+  </section>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player id="hr-lottie"
+                    src="https://assets1.lottiefiles.com/packages/lf20_7x93a9cq.json"
+                   background="transparent"
+                   speed="1.2"
+
+                   loop
+                   autoplay>
+    </lottie-player>
+
+    <section id="context" class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        Dogs communicate through an array <br/>of verbal and non-verbal signals
+                        like <br/> body posture, facial expressions, and tail wagging.<br/><br/>
+                        <span id="context-intro">Deciphering these signals is often challenging for humans.<br/>
+                        Is a dog really happy when its tail wags?</span><br/><br/>
+                        We think so, but the answer lies in the situation's context <br/>
+                        and requires human interpretation, a faulty approach at best.
+                    </div>
+                </div>
+    </section>
+
+
+        <section id=""
+                class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player id="coming-soon-lottie"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_hqwb3xfq.json"
+                                   background="transparent"
+                                   speed="1"
+                                   style=" margin-left: auto; margin-right: auto;"
+                                   loop
+                                   autoplay>
+                    </lottie-player>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+    <section id="home-container">
+
+            <div id="intro-container" class="paragraph">
+                <em class="telexi_text">telexi </em>
+                (telephone + lexigram) is a new platform <br/>
+                which employs touch signals to improve communication <br/>
+                between humans and dogs.<br/>
+            </div>
+
+            <p id="paragraph-1" class="paragraph">
+                When a dog touches a tile with its nose or paw, <br/>
+                <em class="telexi_text">telexi </em>
+                interprets the
+                touch as an <em>intent</em> <br/>and vocalizes the intent
+                with an audio clip.
+            </p>
+
+
+
+                <h4 class="question_headers">
+                    How it works
+                </h4>
+                <p id="paragraph-2" class="paragraph">
+                    Let's consider a trainer who has conditioned his dog<br/>
+                     to associate the word <em>water</em> with the real thing. <br/><br/>
+                    When he refills his dog's water he speaks the word aloud <br/>
+                    so the dog knows the name "water" by reference.
+                </p>
+
+                <div class="container">
+                    <img
+                    id="man-serves-water-to-dog-illustration"
+                    class=""
+                    src="{% static 'img/man-serves-water-to-dog.jpeg' %}"
+                    alt="trainer serves water dish to dog"
+                    />
+                </div>
+
+                <p class="paragraph">
+
+                    <br/>But knowing a word alone isn't very useful. <br/>Communication only flows one-way. <br/><br/>
+                    The trainer can speak "water", <br/>but the dog remains unable to utilize <br/>its
+                    understanding of the name independently.
+                </p>
+
+                <hr class="hr"/>
+
+                <p class="paragraph">
+                    Now let's equip the trainer with a
+                    <em> telexi</em> device and online profile.
+                </p>
+
+            <div id="how-it-works-container"
+                class="container">
+                <div class="row">
+
+               <div class="col-sm">
+                    <div class="row">
+                        <h5>Enable Wifi</h5>
+                        <table class="fa-ul">
+                            <tr>
+                                <td class="number">1</td>
+                                <td>Power on device</em></td>
+                            </tr>
+                            <tr>
+                                <td class="number">2</td>
+                                <td>Open Wifi settings on mobile device</td>
+                            </tr>
+                            <tr>
+                                <td class="number">3</td>
+                                <td>Select <em>telexi</em> network</td>
+                            </tr>
+
+                            <tr>
+                                <td><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_Fl4crU.json"
+                                                       background="transparent"
+                                                       speed="1"
+                                                       style="width: 45px; height: 45px;;"
+                                                       loop
+                                                       autoplay>
+                                        </lottie-player></td>
+                                <td>Device online</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+               <div class="col-sm">
+                    <div class="row">
+                        <h5>Create Profile</h5>
+                        <table class="fa-ul">
+                            <tr>
+                                <td class="number">1</td>
+                                <td>Go to <em>telexi.io/activate</em></td>
+                            </tr>
+                            <tr>
+                                <td class="number">2</td>
+                                <td>Enter device's serial number</td>
+                            </tr>
+
+                            <tr>
+                                <td><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_Fl4crU.json"
+                                                       background="transparent"
+                                                       speed="1"
+                                                       style="width: 45px; height: 45px;;"
+                                                       loop
+                                                       autoplay>
+                                        </lottie-player></td>
+                                <td>Profile created</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="row">
+                        <h5>Record Word</h5>
+                        <table class="fa-ul">
+                            <tr>
+                                <td class="number">1</td>
+                                <td>Go to <em>telexi.io/profile</em></td>
+                            </tr>
+                            <tr>
+                                <td class="number">2</td>
+                                <td>Record word prompt appears</td>
+                            </tr>
+                            <tr>
+                                <td class="number">3</td>
+                                <td>Record word</td>
+                            </tr>
+                            <tr>
+                                <td><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_Fl4crU.json"
+                                                       background="transparent"
+                                                       speed="1"
+                                                       style="width: 45px; height: 45px;;"
+                                                       loop
+                                                       autoplay>
+                                        </lottie-player></td>
+                                <td><em>telexi</em> uploads word to device</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+                <div class="container">
+                    <img id="water-audio-clip-passes-to-telexi-hub-illustration"
+                            src="{% static 'img/water-audio-clip-passes-to-telexi-hub.jpeg' %}"
+                            alt="diagram illustrates how the water audio clip is
+                                    delivered from the phone app to the
+                                    wifi router to the telexi device"
+                    />
+                </div>
+
+                <hr class="hr" />
+
+                <p class="paragraph">
+                    The trainer can now attach a tile
+                    to represent the word <em>water</em>. <br/><br/>
+                    In order to distinguish between words,
+                    each tile must be unique. <br/>
+                    To accomplish this we use shapes
+                    called <em>lexigrams</em>.
+                </p>
+
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets9.lottiefiles.com/datafiles/xp79QLT43EaFdU2AQY5c4mWlHjLuZipUCphjmVHJ/Shapes/data.json"
+                            background="transparent"
+                           speed="1"
+                            style="width: 425px; height: 200px; margin-left: auto; margin-right: auto;"  loop  autoplay>
+            </lottie-player>
+
+                <p class="paragraph">
+                    The shape of his dog's water dish is a circle, <br/>
+                    so the trainer selects a circle among the lexigram decals <br/>
+                    and connects the lexigram to the device at one of 10 ports.
+                </p>
+                <br/>
+
+                <p class="paragraph">
+                    // TO-DO: Insert image where man connects lexigram to device as dog watches
+                </p>
+                <img src="#" alt="">
+                <br/>
+
+                <p class="paragraph">Navigating back to the online profile, <br/>
+                    he assigns the word <em>water</em> to the lexigram. </p>
+
+                <p  class="paragraph">
+                    // TO-DO: Insert image where dog touches lexigram with nose as man watches
+                </p>
+                    <img src="#" alt="">
+                <br/>
+
+                <p class="paragraph">
+                    Now, when the dog touches the
+                    lexigram, it can request water!
+                </p>
+
+                <hr class="hr"/>
+
+                <h4 class="question_headers">
+                    Ok, the dog can “talk” but isn’t this a novelty?
+                </h4>
+
+                <p class="paragraph">
+                    True -- touching a tile to speak
+                    a word isn’t exactly remarkable.
+                    <br/>
+                    Products like these exist already.
+                </p>
+
+                <p class="paragraph">What separates <em class="telexi_text">telexi </em> <br/>
+                    from traditional dog communication buttons<br/> is the integration of
+                    <em>software</em>.
+                </p>
+
+                <p class="paragraph">
+                    <em class="telexi_text">telexi</em>'s
+                    profiles track touch events over time to <br/> visualize patterns which emerge in data.
+                </p>
+
+                <div id="illustration-container">
+                    <div class="row">
+                    <div class="col-sm">
+                        <img id="diagram-1"
+                                src="{% static 'img/touch_events_diagram.png' %}"
+                                alt="diagram of dog's touch events"/>
+                    </div>
+
+                    <div class="col-sm">
+                        <img    id="diagram-2"
+                        src="{% static 'img/touch_events_diagram_2.png' %}"
+                        alt="diagram of dog's touch events over time"/>
+                    </div>
+
+                </div>
+                </div>
+
+
+                <p class="paragraph">
+                     Data is continuously streamed and
+                     sourced <br/>as a reference
+                    for dogs of the same <br/>
+                    breed, sex, age, and other criteria.
+                </p>
+
+         <img   id="profile-img"
+                 src="{% static 'img/ava-others.jpeg' %}"
+                 alt="a single dog's profile avatar displays with a
+                       United States of America flag to
+                     indicate nationality, and a container displays
+                     which indicates sex by Female, age by 14 weeks,
+                     and breed by German Shepherd"/>
+
+<section id="newsletter" class="container">
+                <div class="row">
+                    <div class="content-wrap col-sm">
+                        <h4 class="content-title">Get notified when in stock (inactive)</h4>
+                        <form>
+                    <input type="text" name=""
+                           placeholder="Enter email"
+                           style="padding: 2px">
+                    <input type="submit"
+                           name=""
+                           value="Subscribe"
+                           style="background-color: #235789;
+                                  border: 1px solid black;
+                                  color: white;
+                                  padding: 8px 8px;
+                                  border-radius: 5px;
+                                  text-align: center;
+                                  text-decoration: none;
+                                  display: inline-block;
+                                  font-size: 16px;">
+                  </form>
+
+                    </div>
+                </div>
+</section>
+
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="pb-3 h5">
+          All Products
+      </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+
+        {% for product in products %}
+
+        <div class="col">
+          <a class="text-dark text-decoration-none"
+                   href="{{ product.get_absolute_url }}">
+          <div class="card shadow-sm">
+
+            <img class="img-fluid"
+                 alt="Responsive image"
+                 src="{{ product.image.url }}">
+
+            <div class="card-body">
+              <p class="card-text">
+                  {{ product.title }}
+                  <small id="price"
+                         class="text-muted">
+                      ${{ product.price }}
+                  </small>
+              </p>
+
+              <div class="d-flex justify-content-between align-items-end">
+                <small class="text-muted">
+                    {{ product.description }}
+                </small>
+              </div>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="about">
+
+    <p class="paragraph">
+        <em class="telexi_text"> telexi</em>'s
+        development was inspired by the
+        research of John W. Pilley, whose
+        work with Chaser the Border Collie
+        demonstrates that dogs can comprehend sentences with a
+        prepositional object, verb, and direct object.
+        <br/><br/>Pilley recounts their
+        triumphs and shortcomings with lexicon in <br/>
+        <a href="https://www.amazon.com/Chaser-Unlocking-Genius-Knows-Thousand/dp/0544334590">
+        <em>Chaser: Unlocking the Genius of the Dog Who Knows a Thousand Words.</em></a>
+    </p>
+
+    <p class="paragraph">
+        Many academics like Pilley have published
+        research on dog communication and perception.
+        Their findings have informed our sense of what's
+        possible in canine signals.
+    </p>
+
+    <p class="paragraph">
+        seawolf software thinks dogs are capable of abstract, complex thought.
+        As a work in progress, we aim to develop <em>telexi</em>
+        as a tool to better enable dogs to <em>express</em> these thoughts.
+    </p>
+
+    <p class="paragraph">
+        In doing so, we hope to accelerate humanity's understanding
+        of dog cognition, sourced by touch events from our best
+        friends around the world.
+    </p>
+    </section>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_cigoaraj.json"
+                            background="transparent"
+                           speed="1"
+                            style="width: 425px; height: 200px; margin-left: auto; margin-right: auto;"  loop  autoplay>
+            </lottie-player>
+
+</section>
+
+
+
+
+
+</main>
+
+{% endblock %}

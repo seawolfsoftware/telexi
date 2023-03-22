@@ -1,7 +1,7 @@
 {
-  "ssid": "Chaz&Annie",
-  "ssid_password": "Watermelon23",
-  "server_url": "https://telexi.seawolfsoftware.io/api/v1/",
-  "server_ip": "157.230.93.255",
+  "ssid": "ChannieTheFBI",
+  "ssid_password": "DaisyPeanut@%26&$32!!",
+  "server_url": "http://127.0.0.1:8000/api/v1/",
+  "server_ip": "127.0.0.1",
   "query_interval_sec": 15
 }

@@ -10,12 +10,12 @@ from django.contrib.auth.models import User
 class PressEventViewSet(viewsets.ModelViewSet):
     queryset = PressEvent.objects.all()
     serializer_class = PressEventSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     authentication_classes = (TokenAuthentication,)
 
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     authentication_classes = (TokenAuthentication,)

@@ -90,6 +90,11 @@ def connect_to_upstream_socket():
 
     while True:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        # returns a list of addresses, 
+        # and each address has more information than we need. 
+        # We want to get just the first valid address, 
+        # and then just the IP address and port of the server
         addr = socket.getaddrinfo(config['server_ip'], 80)[0][-1]
         print('Socket address is:', addr)
 
@@ -206,5 +211,6 @@ def post_event_to_api():
 
 
 connect_to_wifi()
+# start_local()
 # connect_to_upstream_socket()
-listen_for_touch_events()
+# listen_for_touch_events()
