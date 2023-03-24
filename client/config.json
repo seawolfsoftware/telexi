@@ -1,7 +1,0 @@
-{
-  "ssid": "ChannieTheFBI",
-  "ssid_password": "DaisyPeanut@%26&$32!!",
-  "server_url": "http://10.0.0.147:8000/api/v1/",
-  "server_ip": "10.0.0.147",
-  "query_interval_sec": 15
-}
